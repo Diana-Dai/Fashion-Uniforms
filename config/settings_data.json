@@ -1,1 +1,492 @@
-{"current":{"logo_on_white":"","logo_on_dark":"shopify:\/\/shop_images\/fashionUniformsLogo.png","favicon":"shopify:\/\/shop_images\/F_LOGO-01.png","color_primary":"#747474","color_secondary":"#bbb","color_borders":"#e5e5e5","color_body_bg":"#fff","color_body_text":"#333333","color_footer_bg":"#f2f2f2","color_footer_text":"#636363","color_footer_social_link":"#bbbbbb","footer_social_enable":true,"address-heading-1":"Auckland Physical Address:","address-column-1":"Fashion Uniforms     \n23 East Street, Papakura     \nAuckland, New Zealand","address-heading-2":"Christchurch Physical Address:","address-column-2":"Fashion Uniforms Fitting Service\n7B Pilgrim Pl, Christchurch \nPhone: 0800 929 272 \nHours: Tue & Wed 10am-4pm","address-heading-3":"Postal Address:","address-column-3":"Fashion Uniforms \nPO Box 72007, Papakura \nAuckland 2244, New Zealand","phone":"+64 9 299 6984","email":"sales@fashionuniforms.co.nz","copyright":"All information © 2019 Fashion Uniforms Ltd","terms-conditions-url":"","privary-url":"","cart_notes_enable":true,"cart_vendor_enable":false,"ajax_cart_method":"drawer","social_facebook_link":"https:\/\/www.facebook.com\/fashionuniformsnz","socail_linkedin_link":"https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/","social_instagram_link":"https:\/\/www.instagram.com\/fashionuniformsnz\/","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","logo_use_image":false,"logo_max_width":"450","favicon_enable":false,"footer_newsletter_enable":true,"newsletter_form_action":"","social_twitter_link":"https:\/\/twitter.com\/motifmate","checkout_use_storefront_logo":false,"sections":{"1566854457232":{"type":"testimonials","blocks":{"1566854571881":{"type":"testimonial","settings":{"testimonial_body":"I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.","testimonial_name":"Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"}},"1566854684942":{"type":"testimonial","settings":{"testimonial_body":"Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.","testimonial_name":"Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"}},"1566854464564":{"type":"testimonial","settings":{"testimonial_body":"Recently we went through a brand refresh, which involved updating our uniform. We received a lot of good feedback from the stores about the new uniforms and the process was really straightforward. We’re a nationwide franchise business, so it’s really convenient the way our stores can order their uniforms directly from Fashion Uniforms.","testimonial_name":"Nick Moxon, Marketing Loyalty Coordinator, Paperplus"}},"1566854733893":{"type":"testimonial","settings":{"testimonial_body":"Our staff always look good and are proud to wear the Geneva uniform. The garments are durable because the quality is there from the start. I also like the personal approach Fashion Uniforms offer us. Our account manager understands our business and responds quickly to our requests.","testimonial_name":"Jayne Glenister, Team Leader Human Resources, Geneva Healthcare"}},"1566854754559":{"type":"testimonial","settings":{"testimonial_body":"I contacted Fashion Uniforms and after several brainstorming meetings we hit our current uniform. The design was flexible enough to be able to be tailored to all departments, giving a professional and executive look to our staff. Fashion Uniform helped us with the sizing of our staff and deliveries were clearly marked and timed. That was four years ago and the uniforms have stood the test of time and the original blouses are still in use and have not faded or lost freshness.","testimonial_name":"Patsy Bell, Hastings City New World"}},"1566854796885":{"type":"testimonial","settings":{"testimonial_body":"I work closely with our Fashion Uniforms account manager and she makes everything easy.  Nothing is ever a problem. We changed to Fashion Uniforms from another supplier and everyone likes what we’re wearing now. Recently we introduced a new maternity style, which has been a big success. We’ve also changed the colour of our support services uniform – a move made straightforward by our Fashion Uniforms account manager. Our uniform garments look good with minimal care - just wash, dry on a hanger and wear. No ironing required.","testimonial_name":"Rosemary Goodin, Taranaki District Health Board"}},"1566854818584":{"type":"testimonial","settings":{"testimonial_body":"I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.","testimonial_name":"Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"}},"1566854826099":{"type":"testimonial","settings":{"testimonial_body":"Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.","testimonial_name":"Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"}}},"block_order":["1566854571881","1566854684942","1566854464564","1566854733893","1566854754559","1566854796885","1566854818584","1566854826099"],"settings":{"testimonial_background_image":"shopify:\/\/shop_images\/testimonial-bg-1.jpg"}},"1566855456936":{"type":"banner","settings":{"main_background_image":"shopify:\/\/shop_images\/fashionUniforms-1.jpg","logo_image":"shopify:\/\/shop_images\/fashionUniformsLogo.png"}},"1566859286299":{"type":"feature-banner","settings":{"feature_preheading":"FUNCTIONALITY WITH","feature_heading":"FASHION","feature_subheading":"FASHION UNIFORMS IS NEW ZEALAND’S FOREMOST DESIGNER, MANUFACTURER AND SUPPLIER OF CUSTOM-DESIGNED UNIFORMS","feature_body":"Since 1966 we have been outfitting New Zealand’s health and corporate workers with quality garments that people love to wear. Today, several points of difference help us to stand out in the market - New Zealand manufacturing, sophisticated design services, and the flexibility to provide quick turnarounds and short runs. Every garment we make is backed by a two-year guarantee. Our clients span the industry landscape, from hospitals and food manufacturers to financial services and supermarkets. If you have a uniform challenge on your horizon, we have the track record and service standards you’re looking for.","feature_image":"shopify:\/\/shop_images\/Tunic-intro-image.jpg"}},"1566859474176":{"type":"four-column","blocks":{"1566859494062":{"type":"section","settings":{"column_section_title":"The brief","column_section_body":"To ensure a 'right first time' result, we get to know your business and your uniform needs. Listening always comes before designing."}},"1566859499888":{"type":"section","settings":{"column_section_title":"Design","column_section_body":"Our design team draws on years of industry experience to prepare concepts or find existing designs that fit your brief. We use your feedback to fine-tune our ideas."}},"1566859511770":{"type":"section","settings":{"column_section_title":"Evaluation","column_section_body":"Sample garments are developed or sourced for management and employee evaluation. Adjustments can be made before we prepare final patterns and material specification."}},"1566859525957":{"type":"section","settings":{"column_section_title":"PRODUCTION","column_section_body":"Employees are measured and fitted, to ensure a comfortable and aesthetically-pleasing outcome. Uniforms are manufactured, either at our NZ facility or imported for economies of scale, then delivered to your door."}}},"block_order":["1566859494062","1566859499888","1566859511770","1566859525957"],"settings":{"column_heading":"OUR DESIGN PROCESS","column_subheading":"FOUR STEPS TO SUCCESS","column_title_footer":"UNIFORMS YOUR PEOPLE WILL LOVE TO WEAR"}},"about-banner":{"type":"about-banner","settings":{"about_background_image":"shopify:\/\/shop_images\/header-aboutUs.jpg","logo_image":"shopify:\/\/shop_images\/about-diamond.png"}},"about-grey-statement":{"type":"about-grey-statement","settings":{"grey_heading":"SINCE 1966 FASHION UNIFORMS HAS BEEN DESIGNING, MANUFACTURING AND SOURCING SUPERIOR HEALTHCARE UNIFORMS AND CORPORATE CLOTHING","grey_content":"Fashion Uniforms is New Zealand’s longest-standing healthcare and corporate wardrobe provider. We're also one of the few with a dedicated local manufacturing resource. Our decades in the work apparel industry have taught us many things, but number one is the importance of listening. Only by understanding each client’s business, industry, brand and practical requirements can we respond with fashionable solutions that suit every employee and fit every aspect of the brief. As your apparel partner we promise to deliver consistent high service standards and product excellence."}},"about-feature-banner":{"type":"about-feature-banner","settings":{"feature_heading":"STAND-OUT STYLE\nAND OUTSTANDING QUALITY","feature_subheading":"WORK WEAR DESIGN REQUIRES A SPECIAL COMBINATION OF CREATIVITY, ENGINEERING AND PRACTICALITY.","feature_body":"Our uniform experts are continually applying their advanced skills to develop or source apparel solutions that perform on every level. They consider comfort and functionality, body shapes and sizes, longevity of materials, and the requirement for a consistent brand image. Their ingenuity has enabled us to develop unique fabrics and ingenious garment features. Overlaying everything we design is a layer of fashion sense that ensures garments are both stylish and contemporary.","feature_image":"shopify:\/\/shop_images\/manufacturedInNZ.jpg"}},"testimonials":{"type":"testimonials","blocks":{"1566861571889":{"type":"testimonial","settings":{"testimonial_body":"I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.","testimonial_name":"Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"}},"1566861600057":{"type":"testimonial","settings":{"testimonial_body":"Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.","testimonial_name":"Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"}},"1566861608652":{"type":"testimonial","settings":{"testimonial_body":"Recently we went through a brand refresh, which involved updating our uniform. We received a lot of good feedback from the stores about the new uniforms and the process was really straightforward. We’re a nationwide franchise business, so it’s really convenient the way our stores can order their uniforms directly from Fashion Uniforms.","testimonial_name":"Nick Moxon, Marketing Loyalty Coordinator, Paperplus"}},"1566861615990":{"type":"testimonial","settings":{"testimonial_body":"Our staff always look good and are proud to wear the Geneva uniform. The garments are durable because the quality is there from the start. I also like the personal approach Fashion Uniforms offer us. Our account manager understands our business and responds quickly to our requests.","testimonial_name":"Jayne Glenister, Team Leader Human Resources, Geneva Healthcare"}},"1566861621965":{"type":"testimonial","settings":{"testimonial_body":"I contacted Fashion Uniforms and after several brainstorming meetings we hit our current uniform. The design was flexible enough to be able to be tailored to all departments, giving a professional and executive look to our staff. Fashion Uniform helped us with the sizing of our staff and deliveries were clearly marked and timed. That was four years ago and the uniforms have stood the test of time and the original blouses are still in use and have not faded or lost freshness.","testimonial_name":"Patsy Bell, Hastings City New World"}},"1566861628520":{"type":"testimonial","settings":{"testimonial_body":"I work closely with our Fashion Uniforms account manager and she makes everything easy.  Nothing is ever a problem. We changed to Fashion Uniforms from another supplier and everyone likes what we’re wearing now. Recently we introduced a new maternity style, which has been a big success. We’ve also changed the colour of our support services uniform – a move made straightforward by our Fashion Uniforms account manager. Our uniform garments look good with minimal care - just wash, dry on a hanger and wear. No ironing required.","testimonial_name":"Rosemary Goodin, Taranaki District Health Board"}},"1566861634639":{"type":"testimonial","settings":{"testimonial_body":"I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.","testimonial_name":"Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"}},"1566861640805":{"type":"testimonial","settings":{"testimonial_body":"Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.","testimonial_name":"Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"}}},"block_order":["1566861571889","1566861600057","1566861608652","1566861615990","1566861621965","1566861628520","1566861634639","1566861640805"],"settings":{"testimonial_background_image":"shopify:\/\/shop_images\/testimonial-bg-2.jpg"}},"process-banners":{"type":"process-banners","blocks":{"1566864959952":{"type":"process","settings":{"section_background_image":"","section_step_image":"shopify:\/\/shop_images\/step-1.png","preheading":"The brief","heading":"Understanding your needs","section_content":"OUR UNIFORM DESIGNERS WORK CLOSELY WITH YOU TO GET THE BRIEF RIGHT. THERE’S\nA LOT TO CONSIDER – BUDGET, EMPLOYEE NUMBERS, TIMEFRAME, FUTURE PLANS, HEALTH & SAFETY REQUIREMENTS, SECTOR EXPECTATIONS AND SPECIAL REQUESTS. WE ALSO EVALUATE YOUR CURRENT UNIFORMS AND CAPTURE RELEVANT BRAND ELEMENTS - LOGOS, FONTS, COLOURS AND PERSONALITY."}},"1566865275166":{"type":"process","settings":{"section_background_image":"shopify:\/\/shop_images\/step-2.jpg","section_step_image":"shopify:\/\/shop_images\/step-2.png","preheading":"Production","heading":"TURNING PLANS INTO EVERYDAY REALITY","section_content":"GARMENTS ARE MANUFACTURED TO ORDER, EITHER AT OUR PAPAKURA FACTORY OR OFFSHORE. TO MAINTAIN PRICE COMPETITIVENESS IN THE SUPPLY OF BULK ITEMS, WE HAVE FORMED PARTNERSHIPS WITH CAREFULLY SELECTED FACILITIES IN ASIA AND FIJI. STRICT QUALITY CONTROL ENSURES SATISFACTION AND ALL GARMENTS ARE GUARANTEED FOR TWO YEARS. WE DELIVER TO YOUR DOOR."}},"1566865504420":{"type":"process","settings":{"section_background_image":"","section_step_image":"shopify:\/\/shop_images\/step-3.png","preheading":"Evaluation","heading":"FEEDBACK, FINE-TUNING AND FITTING","section_content":"AFTER RECEIVING AND PROCESSING YOUR INITIAL FEEDBACK, WE PROVIDE SAMPLES THAT CAN BE PRESENTED TO EMPLOYEES FOR EVALUATION. FURTHER DESIGN ADJUSTMENTS CAN BE MADE BEFORE FINAL SAMPLES ARE PRODUCED. WE PROVIDE AN INDIVIDUAL PROFESSIONAL FITTING SERVICE TO ENSURE FINISHED GARMENTS ARE COMFORTABLE AND ATTRACTIVE."}},"1566865450015":{"type":"process","settings":{"section_background_image":"shopify:\/\/shop_images\/step-4.jpg","section_step_image":"shopify:\/\/shop_images\/step-4.png","preheading":"Production","heading":"TURNING PLANS INTO EVERYDAY REALITY","section_content":"GARMENTS ARE MANUFACTURED TO ORDER, EITHER AT OUR PAPAKURA FACTORY OR OFFSHORE. TO MAINTAIN PRICE COMPETITIVENESS IN THE SUPPLY OF BULK ITEMS, WE HAVE FORMED PARTNERSHIPS WITH CAREFULLY SELECTED FACILITIES IN ASIA AND FIJI. STRICT QUALITY CONTROL ENSURES SATISFACTION AND ALL GARMENTS ARE GUARANTEED FOR TWO YEARS. WE DELIVER TO YOUR DOOR."}}},"block_order":["1566864959952","1566865275166","1566865504420","1566865450015"],"settings":{}},"faq":{"type":"faq","blocks":{"1599779158448":{"type":"section","settings":{"faq_question":"Our refund & exchange policy","faq_answer":"In addition to your consumer law rights, should you change your mind we will happily exchange or refund providing the following conditions have been met:\n\n- The item with the original invoice are returned to Fashion Uniforms within 14 (unless otherwise advised at the time of sale) days of purchase ;\n- Items must be in original condition as purchased with all labels and tags intact.  Garments must not have been worn.\n\nAll returns and exchanges remain the responsibility of the purchaser until received by Fashion Uniforms.   Any exchanges are subject to stock availability.\n\nRefunds will be processed at the original purchase price using the original form of payment.\n\nPlease note that any freight charges will not be refunded and standard freight terms will apply on re-delivery for exchanges, unless goods are returned in accordance with your consumer law rights (eg. faulty goods or goods not matching the description)"}},"1599784003460":{"type":"section","settings":{"faq_question":"How to return an item","faq_answer":"Content Goes Here"}},"1599784035716":{"type":"section","settings":{"faq_question":"How to exchange an item","faq_answer":"Content goes here"}}},"block_order":["1599779158448","1599784003460","1599784035716"],"settings":{}},"biogarde-white-banner":{"type":"biogarde-white-banner","settings":{"content":"For more than a decade we have been using our own proprietary fabric, BioGarde, to create uniforms for thousands of health workers around New Zealand. BioGarde has many special benefits, including being hard-wearing, anti-odour, home washable and offering guaranteed microbial protection for a minimum of 100 washes. <strong>In 2020, independent laboratory testing confirmed that BioGarde is effective against coronavirus within two hours.*<\/strong>"}},"16118736056e2e2f48":{"type":"biogarde-gray-banner","settings":{"content":""}},"biogarde-gray-disclaimer":{"type":"biogarde-gray-disclaimer","settings":{"content":"* ISO18184:2019 tests confirmed Biogarde™ protects treated fabrics from bacterial or viral contamination but does not protect against infection or disease.\nISO18184:2019 tests were done on Biogarde™-treated fabrics after 100HL (home launders) therefore replacement after this amount is recommended for best performance and sustainability."}}},"content_for_index":["1566855456936","16118736056e2e2f48","1566859286299","1566854457232","1566859474176"]},"presets":{"Default":{"ajax_cart_method":"drawer","cart_notes_enable":true,"color_body_bg":"#fff","color_body_text":"#333333","color_borders":"#e5e5e5","color_footer_bg":"#f2f2f2","color_footer_social_link":"#bbbbbb","color_footer_text":"#636363","color_primary":"#747474","color_secondary":"#bbb","favicon_enable":false,"footer_newsletter_enable":true,"footer_social_enable":true,"logo_use_image":false,"social_facebook_link":"","social_linkedin_link":"","social_instagram_link":""}}}
+{
+  "current": {
+    "logo_on_white": "",
+    "logo_on_dark": "shopify:\/\/shop_images\/fashionUniformsLogo.png",
+    "favicon": "shopify:\/\/shop_images\/F_LOGO-01.png",
+    "color_primary": "#747474",
+    "color_secondary": "#bbb",
+    "color_borders": "#e5e5e5",
+    "color_body_bg": "#fff",
+    "color_body_text": "#333333",
+    "color_footer_bg": "#f2f2f2",
+    "color_footer_text": "#636363",
+    "color_footer_social_link": "#bbbbbb",
+    "footer_social_enable": true,
+    "address-heading-1": "Auckland Physical Address:",
+    "address-column-1": "Fashion Uniforms     \n23 East Street, Papakura     \nAuckland, New Zealand",
+    "address-heading-2": "Christchurch Physical Address:",
+    "address-column-2": "Fashion Uniforms Fitting Service\n7B Pilgrim Pl, Christchurch \nPhone: 0800 929 272 \nHours: Tue & Wed 10am-4pm",
+    "address-heading-3": "Postal Address:",
+    "address-column-3": "Fashion Uniforms \nPO Box 72007, Papakura \nAuckland 2244, New Zealand",
+    "phone": "+64 9 299 6984",
+    "email": "sales@fashionuniforms.co.nz",
+    "copyright": "All information © 2019 Fashion Uniforms Ltd",
+    "terms-conditions-url": "",
+    "privary-url": "",
+    "cart_notes_enable": true,
+    "cart_vendor_enable": false,
+    "ajax_cart_method": "drawer",
+    "social_facebook_link": "https:\/\/www.facebook.com\/fashionuniformsnz",
+    "socail_linkedin_link": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/fashionuniformsnz\/",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "logo_use_image": false,
+    "logo_max_width": "450",
+    "favicon_enable": false,
+    "footer_newsletter_enable": true,
+    "newsletter_form_action": "",
+    "social_twitter_link": "https:\/\/twitter.com\/motifmate",
+    "checkout_use_storefront_logo": false,
+    "sections": {
+      "1566854457232": {
+        "type": "testimonials",
+        "blocks": {
+          "1566854571881": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.",
+              "testimonial_name": "Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"
+            }
+          },
+          "1566854684942": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.",
+              "testimonial_name": "Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"
+            }
+          },
+          "1566854464564": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Recently we went through a brand refresh, which involved updating our uniform. We received a lot of good feedback from the stores about the new uniforms and the process was really straightforward. We’re a nationwide franchise business, so it’s really convenient the way our stores can order their uniforms directly from Fashion Uniforms.",
+              "testimonial_name": "Nick Moxon, Marketing Loyalty Coordinator, Paperplus"
+            }
+          },
+          "1566854733893": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Our staff always look good and are proud to wear the Geneva uniform. The garments are durable because the quality is there from the start. I also like the personal approach Fashion Uniforms offer us. Our account manager understands our business and responds quickly to our requests.",
+              "testimonial_name": "Jayne Glenister, Team Leader Human Resources, Geneva Healthcare"
+            }
+          },
+          "1566854754559": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I contacted Fashion Uniforms and after several brainstorming meetings we hit our current uniform. The design was flexible enough to be able to be tailored to all departments, giving a professional and executive look to our staff. Fashion Uniform helped us with the sizing of our staff and deliveries were clearly marked and timed. That was four years ago and the uniforms have stood the test of time and the original blouses are still in use and have not faded or lost freshness.",
+              "testimonial_name": "Patsy Bell, Hastings City New World"
+            }
+          },
+          "1566854796885": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I work closely with our Fashion Uniforms account manager and she makes everything easy.  Nothing is ever a problem. We changed to Fashion Uniforms from another supplier and everyone likes what we’re wearing now. Recently we introduced a new maternity style, which has been a big success. We’ve also changed the colour of our support services uniform – a move made straightforward by our Fashion Uniforms account manager. Our uniform garments look good with minimal care - just wash, dry on a hanger and wear. No ironing required.",
+              "testimonial_name": "Rosemary Goodin, Taranaki District Health Board"
+            }
+          },
+          "1566854818584": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.",
+              "testimonial_name": "Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"
+            }
+          },
+          "1566854826099": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.",
+              "testimonial_name": "Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"
+            }
+          }
+        },
+        "block_order": [
+          "1566854571881",
+          "1566854684942",
+          "1566854464564",
+          "1566854733893",
+          "1566854754559",
+          "1566854796885",
+          "1566854818584",
+          "1566854826099"
+        ],
+        "settings": {
+          "testimonial_background_image": "shopify:\/\/shop_images\/testimonial-bg-1.jpg"
+        }
+      },
+      "1566855456936": {
+        "type": "banner",
+        "settings": {
+          "main_background_image": "shopify:\/\/shop_images\/fashionUniforms-1.jpg",
+          "logo_image": "shopify:\/\/shop_images\/fashionUniformsLogo.png"
+        }
+      },
+      "1566859286299": {
+        "type": "feature-banner",
+        "settings": {
+          "feature_preheading": "FUNCTIONALITY WITH",
+          "feature_heading": "FASHION",
+          "feature_subheading": "FASHION UNIFORMS IS NEW ZEALAND’S FOREMOST DESIGNER, MANUFACTURER AND SUPPLIER OF CUSTOM-DESIGNED UNIFORMS",
+          "feature_body": "Since 1966 we have been outfitting New Zealand’s health and corporate workers with quality garments that people love to wear. Today, several points of difference help us to stand out in the market - New Zealand manufacturing, sophisticated design services, and the flexibility to provide quick turnarounds and short runs. Every garment we make is backed by a two-year guarantee. Our clients span the industry landscape, from hospitals and food manufacturers to financial services and supermarkets. If you have a uniform challenge on your horizon, we have the track record and service standards you’re looking for.",
+          "feature_image": "shopify:\/\/shop_images\/Tunic-intro-image.jpg"
+        }
+      },
+      "1566859474176": {
+        "type": "four-column",
+        "blocks": {
+          "1566859494062": {
+            "type": "section",
+            "settings": {
+              "column_section_title": "The brief",
+              "column_section_body": "To ensure a 'right first time' result, we get to know your business and your uniform needs. Listening always comes before designing."
+            }
+          },
+          "1566859499888": {
+            "type": "section",
+            "settings": {
+              "column_section_title": "Design",
+              "column_section_body": "Our design team draws on years of industry experience to prepare concepts or find existing designs that fit your brief. We use your feedback to fine-tune our ideas."
+            }
+          },
+          "1566859511770": {
+            "type": "section",
+            "settings": {
+              "column_section_title": "Evaluation",
+              "column_section_body": "Sample garments are developed or sourced for management and employee evaluation. Adjustments can be made before we prepare final patterns and material specification."
+            }
+          },
+          "1566859525957": {
+            "type": "section",
+            "settings": {
+              "column_section_title": "PRODUCTION",
+              "column_section_body": "Employees are measured and fitted, to ensure a comfortable and aesthetically-pleasing outcome. Uniforms are manufactured, either at our NZ facility or imported for economies of scale, then delivered to your door."
+            }
+          }
+        },
+        "block_order": [
+          "1566859494062",
+          "1566859499888",
+          "1566859511770",
+          "1566859525957"
+        ],
+        "settings": {
+          "column_heading": "OUR DESIGN PROCESS",
+          "column_subheading": "FOUR STEPS TO SUCCESS",
+          "column_title_footer": "UNIFORMS YOUR PEOPLE WILL LOVE TO WEAR"
+        }
+      },
+      "about-banner": {
+        "type": "about-banner",
+        "settings": {
+          "about_background_image": "shopify:\/\/shop_images\/header-aboutUs.jpg",
+          "logo_image": "shopify:\/\/shop_images\/about-diamond.png"
+        }
+      },
+      "about-grey-statement": {
+        "type": "about-grey-statement",
+        "settings": {
+          "grey_heading": "SINCE 1966 FASHION UNIFORMS HAS BEEN DESIGNING, MANUFACTURING AND SOURCING SUPERIOR HEALTHCARE UNIFORMS AND CORPORATE CLOTHING",
+          "grey_content": "Fashion Uniforms is New Zealand’s longest-standing healthcare and corporate wardrobe provider. We're also one of the few with a dedicated local manufacturing resource. Our decades in the work apparel industry have taught us many things, but number one is the importance of listening. Only by understanding each client’s business, industry, brand and practical requirements can we respond with fashionable solutions that suit every employee and fit every aspect of the brief. As your apparel partner we promise to deliver consistent high service standards and product excellence."
+        }
+      },
+      "about-feature-banner": {
+        "type": "about-feature-banner",
+        "settings": {
+          "feature_heading": "STAND-OUT STYLE\nAND OUTSTANDING QUALITY",
+          "feature_subheading": "WORK WEAR DESIGN REQUIRES A SPECIAL COMBINATION OF CREATIVITY, ENGINEERING AND PRACTICALITY.",
+          "feature_body": "Our uniform experts are continually applying their advanced skills to develop or source apparel solutions that perform on every level. They consider comfort and functionality, body shapes and sizes, longevity of materials, and the requirement for a consistent brand image. Their ingenuity has enabled us to develop unique fabrics and ingenious garment features. Overlaying everything we design is a layer of fashion sense that ensures garments are both stylish and contemporary.",
+          "feature_image": "shopify:\/\/shop_images\/manufacturedInNZ.jpg"
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "1566861571889": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.",
+              "testimonial_name": "Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"
+            }
+          },
+          "1566861600057": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.",
+              "testimonial_name": "Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"
+            }
+          },
+          "1566861608652": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Recently we went through a brand refresh, which involved updating our uniform. We received a lot of good feedback from the stores about the new uniforms and the process was really straightforward. We’re a nationwide franchise business, so it’s really convenient the way our stores can order their uniforms directly from Fashion Uniforms.",
+              "testimonial_name": "Nick Moxon, Marketing Loyalty Coordinator, Paperplus"
+            }
+          },
+          "1566861615990": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Our staff always look good and are proud to wear the Geneva uniform. The garments are durable because the quality is there from the start. I also like the personal approach Fashion Uniforms offer us. Our account manager understands our business and responds quickly to our requests.",
+              "testimonial_name": "Jayne Glenister, Team Leader Human Resources, Geneva Healthcare"
+            }
+          },
+          "1566861621965": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I contacted Fashion Uniforms and after several brainstorming meetings we hit our current uniform. The design was flexible enough to be able to be tailored to all departments, giving a professional and executive look to our staff. Fashion Uniform helped us with the sizing of our staff and deliveries were clearly marked and timed. That was four years ago and the uniforms have stood the test of time and the original blouses are still in use and have not faded or lost freshness.",
+              "testimonial_name": "Patsy Bell, Hastings City New World"
+            }
+          },
+          "1566861628520": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I work closely with our Fashion Uniforms account manager and she makes everything easy.  Nothing is ever a problem. We changed to Fashion Uniforms from another supplier and everyone likes what we’re wearing now. Recently we introduced a new maternity style, which has been a big success. We’ve also changed the colour of our support services uniform – a move made straightforward by our Fashion Uniforms account manager. Our uniform garments look good with minimal care - just wash, dry on a hanger and wear. No ironing required.",
+              "testimonial_name": "Rosemary Goodin, Taranaki District Health Board"
+            }
+          },
+          "1566861634639": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "I'd worked with Fashion Uniforms when I was at my previous job and they'd always given me great service - really responsive and quick to understand what was required. When I moved to Auckland Kindergarten Association and we needed a new uniform for our KiNZ business, as part of a rebranding exercise, I was happy to work with Fashion Uniforms again. We identified an existing blouse design, made some adjustments to the pattern and chose a fabric, to get it just right. Our KiNZ childcare workers really like the uniform, particularly the soft shell jackets - they’re a big hit.",
+              "testimonial_name": "Sian Wilson, Marketing & Digital Manager, Auckland Kindergarten Association"
+            }
+          },
+          "1566861640805": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial_body": "Fashion Uniforms are perceptive and they listen. They presented a great range of options and were able to tailor existing designs by tweaking the fit, changing trims and adding pockets.  The quality of the uniforms is excellent. There have been no issues with seams opening or zips breaking and I haven't had any complaints from staff. Our people are comfortable in the uniforms - the fabrics breathe and the designs don’t restrict movement, which is important in the healthcare sector.",
+              "testimonial_name": "Dauniika Mearns, Practice Manager, MacMurray Gastroenterology"
+            }
+          }
+        },
+        "block_order": [
+          "1566861571889",
+          "1566861600057",
+          "1566861608652",
+          "1566861615990",
+          "1566861621965",
+          "1566861628520",
+          "1566861634639",
+          "1566861640805"
+        ],
+        "settings": {
+          "testimonial_background_image": "shopify:\/\/shop_images\/testimonial-bg-2.jpg"
+        }
+      },
+      "process-banners": {
+        "type": "process-banners",
+        "blocks": {
+          "1566864959952": {
+            "type": "process",
+            "settings": {
+              "section_background_image": "",
+              "section_step_image": "shopify:\/\/shop_images\/step-1.png",
+              "preheading": "The brief",
+              "heading": "Understanding your needs",
+              "section_content": "OUR UNIFORM DESIGNERS WORK CLOSELY WITH YOU TO GET THE BRIEF RIGHT. THERE’S\nA LOT TO CONSIDER – BUDGET, EMPLOYEE NUMBERS, TIMEFRAME, FUTURE PLANS, HEALTH & SAFETY REQUIREMENTS, SECTOR EXPECTATIONS AND SPECIAL REQUESTS. WE ALSO EVALUATE YOUR CURRENT UNIFORMS AND CAPTURE RELEVANT BRAND ELEMENTS - LOGOS, FONTS, COLOURS AND PERSONALITY."
+            }
+          },
+          "1566865275166": {
+            "type": "process",
+            "settings": {
+              "section_background_image": "shopify:\/\/shop_images\/step-2.jpg",
+              "section_step_image": "shopify:\/\/shop_images\/step-2.png",
+              "preheading": "Production",
+              "heading": "TURNING PLANS INTO EVERYDAY REALITY",
+              "section_content": "GARMENTS ARE MANUFACTURED TO ORDER, EITHER AT OUR PAPAKURA FACTORY OR OFFSHORE. TO MAINTAIN PRICE COMPETITIVENESS IN THE SUPPLY OF BULK ITEMS, WE HAVE FORMED PARTNERSHIPS WITH CAREFULLY SELECTED FACILITIES IN ASIA AND FIJI. STRICT QUALITY CONTROL ENSURES SATISFACTION AND ALL GARMENTS ARE GUARANTEED FOR TWO YEARS. WE DELIVER TO YOUR DOOR."
+            }
+          },
+          "1566865504420": {
+            "type": "process",
+            "settings": {
+              "section_background_image": "",
+              "section_step_image": "shopify:\/\/shop_images\/step-3.png",
+              "preheading": "Evaluation",
+              "heading": "FEEDBACK, FINE-TUNING AND FITTING",
+              "section_content": "AFTER RECEIVING AND PROCESSING YOUR INITIAL FEEDBACK, WE PROVIDE SAMPLES THAT CAN BE PRESENTED TO EMPLOYEES FOR EVALUATION. FURTHER DESIGN ADJUSTMENTS CAN BE MADE BEFORE FINAL SAMPLES ARE PRODUCED. WE PROVIDE AN INDIVIDUAL PROFESSIONAL FITTING SERVICE TO ENSURE FINISHED GARMENTS ARE COMFORTABLE AND ATTRACTIVE."
+            }
+          },
+          "1566865450015": {
+            "type": "process",
+            "settings": {
+              "section_background_image": "shopify:\/\/shop_images\/step-4.jpg",
+              "section_step_image": "shopify:\/\/shop_images\/step-4.png",
+              "preheading": "Production",
+              "heading": "TURNING PLANS INTO EVERYDAY REALITY",
+              "section_content": "GARMENTS ARE MANUFACTURED TO ORDER, EITHER AT OUR PAPAKURA FACTORY OR OFFSHORE. TO MAINTAIN PRICE COMPETITIVENESS IN THE SUPPLY OF BULK ITEMS, WE HAVE FORMED PARTNERSHIPS WITH CAREFULLY SELECTED FACILITIES IN ASIA AND FIJI. STRICT QUALITY CONTROL ENSURES SATISFACTION AND ALL GARMENTS ARE GUARANTEED FOR TWO YEARS. WE DELIVER TO YOUR DOOR."
+            }
+          }
+        },
+        "block_order": [
+          "1566864959952",
+          "1566865275166",
+          "1566865504420",
+          "1566865450015"
+        ],
+        "settings": {
+        }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "1599779158448": {
+            "type": "section",
+            "settings": {
+              "faq_question": "Our refund & exchange policy",
+              "faq_answer": "In addition to your consumer law rights, should you change your mind we will happily exchange or refund providing the following conditions have been met:\n\n- The item with the original invoice are returned to Fashion Uniforms within 14 (unless otherwise advised at the time of sale) days of purchase ;\n- Items must be in original condition as purchased with all labels and tags intact.  Garments must not have been worn.\n\nAll returns and exchanges remain the responsibility of the purchaser until received by Fashion Uniforms.   Any exchanges are subject to stock availability.\n\nRefunds will be processed at the original purchase price using the original form of payment.\n\nPlease note that any freight charges will not be refunded and standard freight terms will apply on re-delivery for exchanges, unless goods are returned in accordance with your consumer law rights (eg. faulty goods or goods not matching the description)"
+            }
+          },
+          "1599784003460": {
+            "type": "section",
+            "settings": {
+              "faq_question": "How to return an item",
+              "faq_answer": "Content Goes Here"
+            }
+          },
+          "1599784035716": {
+            "type": "section",
+            "settings": {
+              "faq_question": "How to exchange an item",
+              "faq_answer": "Content goes here"
+            }
+          }
+        },
+        "block_order": [
+          "1599779158448",
+          "1599784003460",
+          "1599784035716"
+        ],
+        "settings": {
+        }
+      },
+      "biogarde-white-banner": {
+        "type": "biogarde-white-banner",
+        "settings": {
+          "content": "For more than a decade we have been using our own proprietary fabric, BioGarde, to create uniforms for thousands of health workers around New Zealand. BioGarde has many special benefits, including being hard-wearing, anti-odour, home washable and offering guaranteed microbial protection for a minimum of 100 washes. <strong>In 2020, independent laboratory testing confirmed that BioGarde is effective against coronavirus within two hours.*<\/strong>"
+        }
+      },
+      "16118736056e2e2f48": {
+        "type": "biogarde-gray-banner",
+        "settings": {
+          "content": ""
+        }
+      },
+      "biogarde-gray-disclaimer": {
+        "type": "biogarde-gray-disclaimer",
+        "settings": {
+          "content": "* ISO18184:2019 tests confirmed Biogarde™ protects treated fabrics from bacterial or viral contamination but does not protect against infection or disease.\nISO18184:2019 tests were done on Biogarde™-treated fabrics after 100HL (home launders) therefore replacement after this amount is recommended for best performance and sustainability."
+        }
+      },
+      "about-staffs": {
+        "type": "about-staffs",
+        "blocks": {
+          "2d86ce1a-6b33-44b7-920b-eb5edcbd4c68": {
+            "type": "staff",
+            "settings": {
+              "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
+              "staff_name": "Allen Daliborka",
+              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_mobile": "0800 223 222",
+              "hide_mobile": false,
+              "staff_email": "myemail@email.com",
+              "hide_email": false,
+              "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
+              "hide_linkedin": false
+            }
+          },
+          "553554a7-d5db-43be-918d-98560cd347de": {
+            "type": "staff",
+            "settings": {
+              "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
+              "staff_name": "Allen Daliborka",
+              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_mobile": "0800 223 222",
+              "hide_mobile": false,
+              "staff_email": "myemail@email.com",
+              "hide_email": false,
+              "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
+              "hide_linkedin": false
+            }
+          },
+          "288f4169-8c27-4e47-a55d-b5b99cb043cd": {
+            "type": "staff",
+            "settings": {
+              "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
+              "staff_name": "Allen Daliborka",
+              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_mobile": "0800 223 222",
+              "hide_mobile": false,
+              "staff_email": "myemail@email.com",
+              "hide_email": false,
+              "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
+              "hide_linkedin": false
+            }
+          },
+          "add6f641-007d-4755-998a-af96c4e52ab7": {
+            "type": "staff",
+            "settings": {
+              "staff_name": "Allen Daliborka",
+              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_mobile": "0800 223 222",
+              "hide_mobile": false,
+              "staff_email": "myemail@email.com",
+              "hide_email": false,
+              "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
+              "hide_linkedin": false
+            }
+          }
+        },
+        "block_order": [
+          "2d86ce1a-6b33-44b7-920b-eb5edcbd4c68",
+          "553554a7-d5db-43be-918d-98560cd347de",
+          "288f4169-8c27-4e47-a55d-b5b99cb043cd",
+          "add6f641-007d-4755-998a-af96c4e52ab7"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "1566855456936",
+      "16118736056e2e2f48",
+      "1566859286299",
+      "1566854457232",
+      "1566859474176"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "ajax_cart_method": "drawer",
+      "cart_notes_enable": true,
+      "color_body_bg": "#fff",
+      "color_body_text": "#333333",
+      "color_borders": "#e5e5e5",
+      "color_footer_bg": "#f2f2f2",
+      "color_footer_social_link": "#bbbbbb",
+      "color_footer_text": "#636363",
+      "color_primary": "#747474",
+      "color_secondary": "#bbb",
+      "favicon_enable": false,
+      "footer_newsletter_enable": true,
+      "footer_social_enable": true,
+      "logo_use_image": false,
+      "social_facebook_link": "",
+      "social_linkedin_link": "",
+      "social_instagram_link": ""
+    }
+  }
+}

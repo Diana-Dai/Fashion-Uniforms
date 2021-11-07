@@ -1,0 +1,152 @@
+<div class="staff-info">
+  <div class="staff-info__header">
+      <h2>{{ section.settings.title }}</h2>
+  </div>
+  <div class="staff-info__container">
+  
+    {% for block in section.blocks %}
+      <div class="staff-info__item">
+        <div class="staff-img_wrapper">
+          <img src="{{ block.settings.staff_image  | img_url: '300x' }}" alt="{{block.settings.staff_image.alt}}" 
+          width="{{ block.settings.staff_image.width }}"
+          height="{{ block.settings.staff_image.height }}">
+        </div>
+        <div class="staff-header">
+          <strong>{{ block.settings.staff_name }}</strong>
+          <p>{{ block.settings.staff_position }}</p>
+        </div>
+        <div class="staff-description">
+          <p>{{ block.settings.staff_description }}</p>
+
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+
+{
+  "name": "Staff Information",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Meet Our Team"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "staff",
+      "name": "staff",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "staff_image",
+          "label": "Image"
+        }, {
+          "type": "text",
+          "id": "staff_name",
+          "label": "Name"
+        }, {
+          "type": "text",
+          "id": "staff_position",
+          "label": "Position"
+        }, {
+          "type": "richtext",
+          "id": "staff_description",
+          "label": "Description"
+        }, 
+        {
+          "type": "text",
+          "id": "staff_mobile",
+          "label": "Mobile"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_mobile",
+          "label": "Hide Mobile"
+        }, 
+        {
+          "type": "text",
+          "id": "staff_email",
+          "label": "Email"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_email",
+          "label": "Hide Email"
+        },
+        {
+          "type": "text",
+          "id": "staff_linkedin",
+          "label": "LinkedIn URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_linkedin",
+          "label": "Hide LinkedIn"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sections",
+      "name": "Staff Information",
+      "blocks": [
+        {
+          "type": "staff"
+        },
+        {
+          "type": "staff"
+        },
+        {
+          "type": "staff"
+        },
+        {
+          "type": "staff"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+
+.staff-info{
+  margin: 0 2rem;
+}
+
+.staff-info__header{
+  margin: 2rem 0;
+  text-align: center;
+}
+.staff-info__container{
+  display:flex;
+  flex-wrap: wrap;
+}
+.staff-info__container .staff-info__item{
+  width: 50%;
+  padding: 1.5rem;
+}
+.staff-info__container .staff-info__item img{
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    45deg,
+    #acacac 0%,
+    #3f3f3f 100%
+  );
+}
+.staff-info__container .staff-header{
+  margin: 2.5rem 0;
+}
+
+.staff-info__container .staff-header p{
+  margin-top: 0.8rem;
+}
+{% endstylesheet %}
