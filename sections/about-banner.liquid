@@ -1,0 +1,43 @@
+<!-- Begin page content -->
+<div class="bannerImage-about" style="background:url( '{{ section.settings.about_background_image  | img_url: '1200x' }}' ) cover no-repeat">
+  <div class="logoWrap-inner">
+    <img src="{{ section.settings.logo_image  | img_url: '1200x' }}" alt="Page Graphic" itemprop="logo">
+  </div>
+</div>
+<!--end-->
+
+{% schema %}
+  {
+
+    "name": "About Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "about_background_image",
+        "label": "Banner Image",
+        "info": "Primary Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Internal Image"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Large Banner",
+        "settings": {
+            
+        }
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

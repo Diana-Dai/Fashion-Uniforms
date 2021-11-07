@@ -1,0 +1,67 @@
+
+{% for block in section.blocks %}
+    {% assign img = block.settings.section_background_image %}
+    <section class="stepWrap {% if img %} processTwo{% endif %}" {% if img %}style="background: url('{{ img  | img_url: '1200x' }}') center no-repeat; background-size: cover;"{% endif %} >
+        <div class="{% if img %}step-2{% else %}step-1{% endif %}">
+            <div class="diamondWrap">
+                <img alt="Our Process step one diamond" src="{{ block.settings.section_step_image | img_url: '100x' }}">
+            </div>
+            <h3 class="processTitle">{{ block.settings.preheading }}</h3>
+            <h4 class="stepByLine">{{ block.settings.heading }}</h4>
+            <div class="processDividerStrip"></div>
+            <h5 class="processStatement">
+                {{ block.settings.section_content | newline_to_br }}
+            </h5>
+            <div class="longArrowDown"><img alt="Scroll down to next step" src="{% if img %}{{ 'vertical-arrow-white.png' | asset_url }}{% else %}{{ 'vertical-arrow.png' | asset_url }}{% endif %}">
+            </div>
+        </div>
+    </section>
+{% endfor%}
+
+{% schema %}
+  {
+    "name": "Process Sections",
+    "tag": "section",
+
+   
+    "blocks": [
+    {
+      "type": "process",
+      "name": "Testimonial",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "section_background_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "section_step_image",
+          "label": "Step Image"
+        },
+        {
+          "type": "text",
+          "id": "preheading",
+          "label": "Preheading"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "section_content",
+          "label": "Content"
+        }
+      ]
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

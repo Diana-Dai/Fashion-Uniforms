@@ -1,0 +1,110 @@
+<!-- Begin page content -->
+<div class="biogarde-about flex container" style="background:white">
+  <div class="flex split end">
+    <div>
+      <h3>
+        NZ'S Only Supplier of
+      </h3>
+    </div>
+    <div  >
+      <a href="http://biogarde.co.nz" targer="_blank">
+        <img src="{{ "biogardelogo.svg" | asset_url }}" width="120"/>
+      </a>
+    </div>
+  </div>
+  <div  class="flex split">
+    <p>{{ section.settings.content }}</p>
+  </div>
+</div>
+<!--end-->
+
+{% schema %}
+  {
+
+    "name": "Biogarde White Banner",
+    "settings":  [
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Biogarde White Banner",
+        "settings": {
+            
+        }
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+  .flex{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  }
+  .flex.end{
+      justify-content:flex-end;
+  }
+  .biogarde-about{
+      height:240px;
+  }
+  .biogarde-about img{
+      margin-right:50px;
+  }
+  .biogarde-about > div{
+	
+  }
+  .biogarde-about h3{
+    text-transform: uppercase;
+	font-size:15px;
+    letter-spacing: 2px;
+	margin:0 10px;
+  }
+  .biogarde-about .split{
+      width:50%
+  }
+  .biogarde-about strong{
+     display:inline;
+	font-weight:600;
+  }
+  .biogarde-about p{
+    font-size:12px;
+    line-height:18px;
+    margin:0px;
+  }
+
+  @media screen and (max-width: 520px) {
+  .flex{
+    display:block;
+ 	flex-direction:column;
+	padding:15px 0;
+  }
+
+  .biogarde-about{
+      height:auto;
+text-align:center;
+   }
+.biogarde-about img{
+      margin-right:0px;
+margin:15px 0;
+  }
+  .biogarde-about .split{
+      width:100%
+  }
+.biogarde-about p{
+  text-align:center;
+}
+.biogarde-about{
+  padding:75px 20px;
+}
+}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,69 @@
+<!-- /templates/collection.liquid -->
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+{% paginate collection.products by 150 %}
+
+<section class="galleryStatementWrap">
+  <div class="container galleryTop">
+    <h1 style="text-transform: uppercase;">         
+      {{ collection.title }} RANGE         
+    </h1>
+    <div class="blackStrip"></div>
+    <div class="galleryWordsWrap">
+      <div class="col-xs-6 para-L" style="width:100%">
+        {{ collection.description | strip_html }}
+      </div>
+    </div>
+    {% if collection.description contains "<img" %}
+      <figure style="margin-top:100px">
+        {% assign src = collection.description | split: ' src="' | last | split:'"' | first %}
+        <img src="{{ src }}" style="width:100%"/>
+        </figure>
+    {% endif %}
+  </div>
+</section>
+
+<section class="galleryWrap">
+  <div class="container">
+    {% for product in collection.products %}
+      <a href="{{ product.url | within: collection }}" class="grid__image">
+        <div class="listItemWrap" >
+          <figure class="collectionImg">
+              {% if product.metafields.custom_fields["main_image_banner"] != blank  %}
+                  <span class="imgbanner">{{ product.metafields.custom_fields["main_image_banner"] }}</span>
+               {% endif %}
+              <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+            </figure>
+          <h2>{{ product.title }}</h2>
+                  	{% for tag in product.tags %}
+          {% if tag == "Biogarde"%}
+          <div class="biogardetag">
+             Available in <a href="http://biogarde.co.nz" targer="_blank">
+          		<img src="{{ "biogardelogowhite.svg" | asset_url }}" width="50"/> 
+            </a>
+          </div>
+          {% endif %}
+
+{% endfor %}
+        </div>
+
+
+
+      </a>
+    {% endfor %}
+    {% if paginate.pages > 1 %}
+      <div style="clear:both"></div>
+      <div class="pagination">
+        Page: {{ paginate | default_pagination | replace: '« Previous', '←' | replace: 'Next »', '→' }}
+      </div>
+    {% endif %}
+  </div>  
+
+</section>
+
+{% endpaginate %}

@@ -1,0 +1,171 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <!-- Basic page needs ================================================== -->
+
+  
+  
+  
+  <!-- Title and description ================================================== -->
+  <title>
+	  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} – {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} – {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}
+  </title>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="facebook-domain-verification" content="ypylkr96y3uob64gzxvow7zt0v3j47" />
+  <script defer data-domain="fashionuniforms.co.nz" src="https://plausible.io/js/plausible.js"></script>
+
+<!-- Hotjar Tracking Code for fashionuniforms.co.nz -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2516701,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+  
+  
+  {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <!-- CSS ================================================== -->
+  {{ 'supporting.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'fashion.scss.css' | asset_url | stylesheet_tag }}
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+  {% include 'oldIE-js' %}
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-704750076"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+     
+      gtag('config', 'AW-704750076');
+    </script>
+  <!--- Tooltip player -->
+<script type='text/javascript'>
+window.Tooltip||function(t,e){var o={
+url:"https://cdn.tooltip.io/static/player.js",
+key:"fb18399b-09d6-4749-9ddb-73185154c5f3",
+async:true
+};
+
+window.Tooltip={cs:[],_apiKey:o.key};for(
+var r=["identify","goal","updateUserData","start","stop","refresh","show","hide","on"],
+i={},n=0;n<r.length;n++){var a=r[n];i[a]=function(t){return function(){var e=Array.prototype.slice.call(arguments);
+window.Tooltip.cs.push({method:t,args:e})}}(a)}window.Tooltip.API=i;var n=t.createElement(e),s=t.getElementsByTagName(e)[0];
+n.type="text/javascript",n.async=o.async,s.parentNode.insertBefore(n,s),n.src=o.url}(document,"script");
+</script>
+<!--- Tooltip player -->
+
+</head>
+
+{% comment %}
+  Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+	<body>
+        
+        
+		{% include 'navigation' %}
+
+
+		{% if template.name != "index" %}
+		
+		{% assign uniformme = false %}
+		{% if (product and product.template_suffix == "uniformme") or (collection and collection.template_suffix == "uniformme")  %}
+           {% assign uniformme = true %}
+        {% endif %}
+        {% if  (collection and collection.template_suffix == "uniformme")  %}
+           {% assign uniformme = true %}
+        {% endif %}
+        
+	    <section class="innerLogo">
+	    {% if uniformme %}
+	      
+
+	    
+	     <div class="innerSmallLogoWrap uniformme">
+	      	<a href="/collections/uniform-me">
+	      	        	<img src="{{ 'uniformme-lrg.png' | asset_url }}" alt="Fashion Uniforms Uniform Me logo" itemprop="logo">
+	      	</a>
+	      </div>
+	    {% else %}
+	      <div class="innerSmallLogoWrap">
+	      	<a href="/">
+	      	        	<img src="{{ 'fashionUniformsLogo-inner.png' | asset_url }}" alt="Fashion Uniforms logo" itemprop="logo">
+	      	</a>
+	      </div>
+	      {% endif %}
+	    </section>
+    {% endif %}
+
+
+
+
+    <main class="wrapper main-content" role="main">
+      {{ content_for_layout }}
+    </main>
+
+
+
+    {% include 'footer' %}
+
+	  {{ 'jquery-1.11.1.min.js' | asset_url | script_tag }}
+		{{ 'bootstrap.min.js' | asset_url | script_tag }}
+		{{ 'slick.min.js' | asset_url | script_tag }}
+		{{ 'slick.js' | asset_url | script_tag }}
+		{{ 'jquery.scrollTo.js' | asset_url | script_tag }}
+		{{ 'jquery.smoothAnchors.js' | asset_url | script_tag }}
+
+		<script type = 'text/javascript'>
+			$(document).ready(function(){
+				$.smoothAnchors("slow");
+			});
+		</script>
+
+		<script>
+			var mzOptions = {
+			  hint: "off"
+			};
+		</script>
+      	<!-- Start of HubSpot Embed Code -->
+  			<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20685423.js"></script>
+		<!-- End of HubSpot Embed Code -->
+	</body>
+</html>

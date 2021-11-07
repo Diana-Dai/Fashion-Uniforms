@@ -1,0 +1,80 @@
+<!-- Design Process section-->
+<section class="designProcess">
+    <div class="container designerP">
+        <h4>{{ section.settings.column_heading }}</h4>
+        <h2>{{ section.settings.column_subheading }}</h2>
+        <div class="row">
+            {% for block in section.blocks %}
+                <div class="col-md-3">
+                    <h5>{{ block.settings.column_section_title }}</h5>
+                    <p>
+                        {{ block.settings.column_section_body }}
+                    </p>
+                </div>
+            {% endfor%}
+        </div>
+        <h4 class="reshaping">{{ section.settings.column_title_footer }}</h4>
+    </div>
+</section>
+<!--end-->
+
+{% schema %}
+  {
+    "name": "Column Features",
+    "tag": "section",
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Four Column Banner",
+        "settings": {
+         
+        }
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "column_heading",
+        "label": "Banner Image",
+        "info": "Primary Logo"
+      },
+      {
+        "type": "text",
+        "id": "column_subheading",
+        "label": "Internal Image"
+      },
+      {
+        "type": "text",
+        "id": "column_title_footer",
+        "label": "Footer Text"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "section",
+      "name": "Column Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_section_title",
+          "label": "Column Name",
+          "info": "Name, Company"
+
+        },
+        {
+          "type": "textarea",
+          "id": "column_section_body",
+          "label": "Column Body"
+        }
+        
+      ]
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

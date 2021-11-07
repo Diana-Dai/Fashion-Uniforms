@@ -1,0 +1,77 @@
+
+<!-- testimonial -->
+<!--<section class="testimonial-bg">
+<!-- testimonial starts -->
+
+
+<section class="main testimonial-bg" style="background: url('{{ section.settings.testimonial_background_image  | img_url: '1200x' }}') center no-repeat; background-size: cover;">
+  {% if section.blocks.size > 1 %}
+  <div class="col-xs-12">
+    <div class="container testimony">
+      <div class="testimonial-slider">
+        {% for block in section.blocks %}
+        <div class="slide">
+          <div class="testimonyInner">
+            <h3>
+              {{ block.settings.testimonial_body }}
+            </h3>
+            <h4>{{ block.settings.testimonial_name }}</h4>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </div>
+    <!--end slider-->
+  </div>
+  {% endif %}
+</section>
+<!--end events testimonials-->
+
+{% schema %}
+  {
+    "name": "Testimonials",
+    "tag": "section",
+    "presets": [
+      {
+        "category": "Testimonial",
+        "name": "Testimonial",
+        "settings": {
+         
+        }
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "testimonial_background_image",
+        "label": "Background Image"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+         {
+          "type": "textarea",
+          "id": "testimonial_body",
+          "label": "Testimonial Body"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_name",
+          "label": "Testimonial Name",
+          "info": "Name, Company"
+
+        }
+      ]
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

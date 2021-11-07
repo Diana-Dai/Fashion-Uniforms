@@ -1,0 +1,77 @@
+<!-- /templates/article.liquid -->
+{% comment %}
+
+  Comments will not appear right after they are submitted, either to be checked for spam
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+
+  More information:
+    - http://docs.shopify.com/themes/liquid-variables/comment
+
+{% endcomment %}
+{% assign newsletter = false %}
+{% if article.tags contains "newsletter" %}
+   {% assign newsletter = true %}
+{% endif %}
+
+{% assign number_of_comments = article.comments_count %}
+{% comment %}
+  If a comment was just submitted and it has no blank fields, we have an extra comment to count.
+{% endcomment %}
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+{% if newsletter %}
+{% include 'newsletter' %}
+    
+    
+{% else %}
+
+<section class="systemMessageWrap">
+  <div class="blog-content-control" style="max-width: 1190px;margin:0 auto;">
+    <div class="blog-container">
+      <h1>Fashion Uniforms Blog </h1>
+      <p class="description">Fashion Uniforms is New Zealand’s longest-standing healthcare and corporate wardrobe provider.</p>
+      <div class="wrapper clear">
+
+
+        <div class="post-list"> 
+          <div id="catblogoutput">
+            <div class="blog-post">
+              <h1 class="post-title">{{ article.title }}</h1>
+              <div class="post-details"> 
+                {{ article.author }} - 
+                <time datetime="{{ article.published_at | date: '%A, %B %d, %Y' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+              </div>
+              {% if newsletter == true %}
+               yes<br/>
+               {% for tag in blog.current_tags %}
+      {{ tag | link_to_tag: tag }}
+    {% endfor %}
+              {% else %}
+              {% endif %}
+              <div class="post-body"> 
+                {{ article.content }}
+                <p>
+                  <a class="back-to-blog" href="/blogs/forum"> BACK TO FORUM</a>
+                </p>
+              </div>
+            </div>
+          </div>       
+        </div>
+
+        <div class="side-panel">
+          {% include 'blog-sidebar' %}
+
+
+            
+        </div>
+
+      </div>
+    </div>  
+  </div>       
+</section>
+
+{% endif %}

@@ -1,0 +1,58 @@
+
+{% assign grid_results = false %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+{% unless search.terms == respond_js_secret_key %}
+
+{% paginate search.results by 30 %}
+  <section class="stepWrap">
+      <div class="step-1">
+         {% if search.performed %}
+          {% if search.results_count == 0 %}
+            <h4 class="stepByLine">{{ 'general.search.no_results_html' | t: terms: search.terms }} 1</h4>
+          {% else %}
+            <h4 class="stepByLine">Search Results</h4>
+          {% endif %}
+        {% else %}
+          <h4 class="stepByLine">{{ 'general.search.title' | t }} 3</h4>
+        {% endif %}
+          <div class="processDividerStrip"></div>
+      </div>
+  </section>
+  {% if search.performed %}
+    <section class="guarantee-bg results-wrap">
+      <div class="container guarantee">
+        <div class="row">
+                     
+          <div class="search-results" id="search--1">  
+            {% for item in search.results %}
+              <div class="search-result">   
+                <h3>{{ forloop.index }}.&nbsp;
+                  {{ item.title | link_to: item.url }}
+                </h3>   
+                <!-- <p> and practicality at the same time. Check out the story below about our Female Button Front Cardigan.  
+
+     Another fashion-forward initiative is our Pleat Front Top, which is <b>tunic</b> length. This piece is the Swiss army knife
+                </p> -->
+              </div>  
+            {% endfor %}
+            <br> 
+             {% if paginate.pages > 1 %}
+          <hr>
+          <div class="pagination">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  
+{% endpaginate %}
+
+
+{% else %}
+  {% include 'respond' %}
+  {% layout none %}
+{% endunless %}

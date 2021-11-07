@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
+
+<!-- FAQ section-->
+
+<section class="faqs">
+    <div class="container">
+        <div class="row">
+            {% for block in section.blocks %}
+                <div class="faq">
+                  <div class="faq-handle">
+                    <span><i class="far fa-plus-square"></i></span>
+                  	<h5>{{ block.settings.faq_question }}</h5>
+                  </div>
+                  <div class="faq-answer">
+                  	<p>
+                      {{ block.settings.faq_answer | newline_to_br }}
+                    </p>
+                  </div>
+                  
+                </div>
+            {% endfor%}
+        </div>
+        <h4 class="reshaping">{{ section.settings.column_title_footer }}</h4>
+    </div>
+</section>
+
+<script>
+  $(function(){
+  	
+    $(".faq-handle").bind("click", function(){
+      var p = $(this).parent();
+      if ( p.hasClass("open") ){
+        $(this).find(".far").addClass("fa-minus-square");
+        $(this).find(".far").addClass("fa-plus-square");
+        p.removeClass("open");
+      }else{
+      	$(this).find(".far").removeClass("fa-plus-square");
+        $(this).find(".far").addClass("fa-minus-square");
+        p.addClass("open");
+      }
+      
+      $(".faq").not( p ).removeClass("open");
+      	
+    
+    })
+    
+  })
+</script>
+
+<style>
+  .container.contactWords h2 {
+    max-width: 500px;
+  }
+  .container.contactWords h3 {
+      max-width: 100%;
+  }
+  .faqs{
+  	margin:50px 0;
+  }
+  .faq{
+  	border:solid 1px #404040;
+  }
+  .faq + .faq{
+  	border-top:none;
+  }
+  .faq-handle{
+    color:#404040;
+    padding: 5px 10px;
+    cursor:pointer;
+  }
+  .faq.open .faq-handle{
+    color:white;
+  	background:#404040;
+  }
+  .faq-handle span{
+  	float:right;
+    font-size:16px;
+    margin: 6px;
+    margin-right:10px;
+  }
+  .faq-handle h5{
+  	color:#404040;
+  }
+  .faq.open .faq-handle h5{
+  	color:white;
+  }
+  .faq-answer{
+  	padding: 20px 10px;
+    min-height: 100px;
+    display:none;
+    background: whitesmoke;
+  }
+  .faq.open .faq-answer{
+  	display:block;
+  }
+  .faq-answer p{
+  	margin:0;
+  }
+  .faq-answer p{
+  	color: #404040;
+    
+  }
+  
+</style>
+
+<!--end-->
+
+
+{% schema %}
+  {
+    "name": "FAQs",
+	"tag": "section",
+	"presets": [
+      {
+        "category": "Sections",
+        "name": "FAQs",
+        "settings": {
+         
+        }
+      }
+    ],
+
+	"blocks": [
+    {
+      "type": "section",
+      "name": "Column Block",
+      "settings": [
+      {
+        "type": "text",
+        "id": "faq_question",
+        "label": "Question"
+      },
+      {
+        "type": "textarea",
+        "id": "faq_answer",
+        "label": "Answer"
+      }
+        
+     ]
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

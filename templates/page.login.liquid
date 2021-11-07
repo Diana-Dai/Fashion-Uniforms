@@ -1,0 +1,81 @@
+<script type="text/javascript">
+<!--
+    _CF_checkFRMLogin = function(_CF_this)
+    {
+        //reset on submit
+        _CF_error_exists = false;
+        _CF_error_messages = new Array();
+        _CF_error_fields = new Object();
+        _CF_FirstErrorField = null;
+
+        //form element user_email required check
+        if( !_CF_hasValue(_CF_this['user_email'], "TEXT", false ) )
+        {
+            _CF_onError(_CF_this, "user_email", _CF_this['user_email'].value, "Please enter your email addresas");
+            _CF_error_exists = true;
+        }
+
+        //form element user_password required check
+        if( !_CF_hasValue(_CF_this['user_password'], "PASSWORD", false ) )
+        {
+            _CF_onError(_CF_this, "user_password", _CF_this['user_password'].value, "Please enter your account password");
+            _CF_error_exists = true;
+        }
+
+
+        //display error messages and return success
+        if( _CF_error_exists )
+        {
+            if( _CF_error_messages.length > 0 )
+            {
+                // show alert() message
+                _CF_onErrorAlert(_CF_error_messages);
+                // set focus to first form error, if the field supports js focus().
+                if( _CF_this[_CF_FirstErrorField].type == "text" )
+                { _CF_this[_CF_FirstErrorField].focus(); }
+
+            }
+            return false;
+        }else {
+            return true;
+        }
+    }
+//-->
+</script>
+
+
+<div class="bannerImage-login">
+    <div class="logoWrap-inner-login"><img src="{{ 'login-rectangle.png' | asset_url }}" alt="Contact"></div>
+</div>
+<div class="container contactWords ">
+    <h2>WELCOME</h2>
+    <div class="processDividerStrip"></div>
+    <!--
+    <h3>
+        IF YOU'RE A CUSTOMER OF FASHION UNIFORMS YOU CAN
+        ACCESS THE ONLINE ORDERING OF OUR WEBSITE BY ENTERING
+        YOUR LOGIN AND PASSWORD DETAILS BELOW.
+        <br/><br/>
+                <a href="http://www.orderingfashionuniforms.co.nz/login.cfm" style="padding: 20px 50px;display:inline-block;height: 47px;margin: 16px 0 0 0;border: none;background: #404040;font-size: 13px;font-family: 'Montserrat';color: #ffffff;letter-spacing: 2px;">Go to Login Page Here</a>
+
+    </h3>
+-->
+
+    <div class="loginFormWrap">                        
+        <div class="controlLogin">
+            <form name="FRMLogin" id="FRMLogin" action="https://www.orderingfashionuniforms.co.nz/login.cfm/dologin/yes" method="POST" >
+                
+                <input name="user_email" id="user_email" placeholder="Login" type="text" class="" >
+                
+                <input name="user_password" id="user_password" placeholder="Password" type="password" class="" >
+                <input class="cat_button goLogIn" type="submit" value="ENTER" alt="" border="0">                   
+            </form>                    
+        </div>            
+    </div> 
+    
+    
+    
+    
+    
+    
+</div>

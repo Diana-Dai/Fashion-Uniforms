@@ -1,0 +1,73 @@
+<!-- /templates/collection.list.liquid -->
+{% comment %}
+
+  By using a variation of the 'view all' parameter technique, you can create
+  a custom layout for any template by adding ?view=xxxx
+
+  In this example, you can have a list view of your collection page by going to
+  /collections/all?view=list
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+  For more information on the ?view parameter:
+    - http://docs.shopify.com/support/configuration/store-customization/can-i-show-more-than-50-products-on-my-homepage-can-i-add-a-view-all-function-to-my-collection-pages#add-view-all
+
+{% endcomment %}
+
+{% paginate collection.products by 12 %}
+
+<div class="landingBanner">
+    <div class="landingContainer">
+        <figure>
+            <a href="#">
+              <img src="{{ collection.image | img_url: 'master'  }}" alt="{{ collection.title }}"/>
+            </a>
+        </figure>
+    </div>
+</div>
+    
+<div class="{{catalogue_style}} landingGrid">
+    {% if catalogue_style == 'landing' %}
+        <div id="filterContainer">
+            {% include 'collection-sorting' %}
+        </div>
+    {% endif %}
+    <div class="landingContainer">
+    <section class=" gridWrap">
+    
+        {% for product in collection.products %}
+          <a href="{{ product.url | within: collection }}" class="grid__image">
+            <div class="" >
+                <div class="imgFrame" style="background-image:url( {{ product.featured_image.src  | img_url: 'large'}} )">
+                    {% if product.price < product.compare_at_price_min %}
+                        <span class="special">SPECIAL</span>
+                    {% endif %}
+                </div>
+                {% if catalogue_style == 'landing' %}
+                <h2>{{ product.title }}</h2>
+                <div class="price">{{ product.price | money }}</div>
+                {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+        
+    </section>  
+    </div>
+</div>
+
+{% if paginate.pages > 1 %}
+  <hr>
+  <div class="pagination">
+    {{ paginate | default_pagination | replace: '« Previous', '←' | replace: 'Next »', '→' }}
+  </div>
+{% endif %}
+
+
+
+  <div class="grid__item large--one-quarter">
+    {% include 'collection-sidebar' %}
+  </div>
+</div>
+
+{% endpaginate %}

@@ -1,0 +1,103 @@
+<!-- Begin page content -->
+<div class="biogarde-home flex">
+  <div class="flex container">
+    <div>
+      <div class="center">
+        <span>
+        The only supplier of <a href="http://biogarde.co.nz" targer="_blank">
+          <img src="{{ "biogardelogo.svg" | asset_url }}" width="100"/> </a></span>
+        <span>Which is proven effective <br/>against coronavirus within two hours</span>
+       
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
+<!--end-->
+
+{% schema %}
+  {
+
+    "name": "Biogarde Gray Banner",
+    "settings":  [
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Biogarde Gray Banner",
+        "settings": {
+            
+        }
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+  .flex{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  }
+  .flex.end{
+      justify-content:flex-end;
+  }
+  .biogarde-home {
+    height:170px;
+	background:#f4f5f7;
+	text-transform: uppercase;
+	font-size:15px;
+    letter-spacing: 2px;
+    font-family:"Montserrat", sans-serif;
+  }
+  .biogarde-home{
+	text-align:center;
+  }
+  .biogarde-home a:hover{
+      text-decoration:none;
+  }
+.biogarde-home img{
+     margin-top: -4px;
+  }
+
+
+@media screen and (max-width: 520px) {
+  .flex{
+    display:block;
+ 	flex-direction:column;
+	padding:35px 0;
+  }
+
+  .biogarde-home{
+     height:auto;
+     text-align:center;
+   }
+   .biogarde-home img{
+      display:block
+	  margin: 10px auto;
+  }
+  .biogarde-home .split{
+      width:100%
+  }
+
+  .biogarde-home{
+  	padding:75px 20px;
+  }
+  .biogarde-home span{
+    display:block
+  }
+  .biogarde-home br{
+    display:none
+  }
+}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

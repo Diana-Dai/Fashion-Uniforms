@@ -1,0 +1,47 @@
+<!-- Begin Grey Statement -->
+<section class="greyStatementWrap">
+    <div class="container statementGrey">
+        <h3>
+            {{ section.settings.grey_heading }}
+        </h3>
+        <p>
+            {{ section.settings.grey_content }}
+        </p>
+    </div>
+</section>
+<!--end-->
+
+{% schema %}
+  {
+
+    "name": "Grey Banner Statement",
+    "settings": [
+      {
+        "type": "text",
+        "id": "grey_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "grey_content",
+        "label": "Content"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Large Banner",
+        "settings": {
+            
+        }
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

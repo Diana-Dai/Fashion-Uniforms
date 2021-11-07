@@ -1,0 +1,92 @@
+<!-- Innovations section-->
+<section class="innovations">
+  <div class="container innerInovate">
+    <div class="col-md-6 innovateText">
+      <h2>
+          <span class="font-10">{{ section.settings.feature_preheading }}</span><br />
+          {{ section.settings.feature_heading }}
+      </h2>
+      <h1>
+          {{ section.settings.feature_subheading }}
+      </h1>
+      <p>
+         {{ section.settings.feature_body }}
+      </p>
+    </div>
+    <div class="col-md-6 innovateImg">
+      <img src="{{ section.settings.feature_image  | img_url: '1200x' }}" alt="fashion uniform with details described" itemprop="logo">
+    </div>
+  </div>
+</section>
+<!--end-->
+
+{% schema %}
+  {
+    "name": "Feature",
+    "tag": "section",
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Feature Banner, Right Image",
+        "settings": {
+         
+        }
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "feature_preheading",
+        "label": "Preheading"
+      },
+      {
+        "type": "text",
+        "id": "feature_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "feature_subheading",
+        "label": "Subheading",
+        "info": "Subheading"
+      },
+      {
+        "type": "textarea",
+        "id": "feature_body",
+        "label": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "feature_image",
+        "label": "Feature Image"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "section",
+      "name": "Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_section_title",
+          "label": "Column Name",
+          "info": "Name, Company"
+
+        },
+        {
+          "type": "textarea",
+          "id": "column_section_body",
+          "label": "Column Body"
+        }
+        
+      ]
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,136 @@
+<div class="bannerImage-contact">
+    <div class="logoWrap-inner-contact"><img alt="Contact" src="{{ 'contact-rectangle.png' | asset_url }}">
+    </div>
+</div>
+<section class="contactFormWrap">
+    <div class="container contactWords ">
+        <h2>{{ page.title }}</h2>
+        <div class="processDividerStrip"></div>
+        <h3>
+            {{ page.content }}
+            
+        </h3>
+        <div class="theFormWrap">
+                {% form 'contact', id: 'NewId' %}
+
+                {% if form.posted_successfully? %}
+                  <p class="note form-success">
+                    {{ 'contact.form.post_success' | t }}
+                  </p>
+                {% endif %}
+
+                {{ form.errors | default_errors }}
+
+
+                <div class="formInnerWrap">
+                    <input type="text" placeholder="First Name" maxlength="255" class="cat_textbox" id="FirstName" name="contact[first_name]" value="{% if contact[first_name] %}{{ contact[first_name] }}{% endif %}">
+                    <input type="text" placeholder="Last Name" maxlength="255" class="cat_textbox" id="LastName" name="contact[last_name]" value="{% if contact[last_name] %}{{ contact[last_name] }}{% endif %}">
+                    <input type="text" placeholder="Company/Organisation" class="cat_textbox" id="CAT_Custom_20000803" name="contact[company]" maxlength="4000" value="{% if contact[company] %}{{ contact[company] }}{% endif %}">
+                    <input type="text" placeholder="Email" maxlength="255" class="cat_textbox" id="EmailAddress" name="contact[email]" value="{% if contact[email] %}{{ contact[email] }}{% endif %}">
+                    <input type="text" placeholder="Location or Address" maxlength="255" class="cat_textbox" id="Location" name="contact[Location]" value="{% if contact[Location] %}{{ contact[Location] }}{% endif %}">
+                  	<input type="text" placeholder="Phone" maxlength="255" class="cat_textbox" id="HomePhone" name="contact[HomePhone]" value="{% if contact[HomePhone] %}{{ contact[HomePhone] }}{% endif %}">
+                    <input type="text" placeholder="Mobile" maxlength="255" class="cat_textbox" id="CellPhone" name="contact[CellPhone]" value="{% if contact[CellPhone] %}{{ contact[CellPhone] }}{% endif %}">
+                    
+                    <div class="preferredContact">
+                        Preferred contact method
+                        <div class="preferredInner">
+                            <div class="preferredItem">
+                                <input type="radio" value="Email" id="CAT_Custom_868_1" name="contact[contact_method]" {% if contact[contact_method] == 'Email' %}selected{% endif %}> Email
+                            </div>
+                            <div class="preferredItem">
+                                <input type="radio" value="Phone" id="CAT_Custom_868_0" name="contact[contact_method]" {% if contact[contact_method] == 'Phone' %}selected{% endif %}> Phone
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="text" placeholder="How many of your staff require uniforms?" maxlength="255" name="contact[staff_number]" id="CAT_Custom_20015805" class="cat_textbox" value="{% if contact[staff_number] %}{{ contact[staff_number] }}{% endif %}">
+                    
+                    <textarea placeholder="Your Message" onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);" class="cat_listbox" rows="4" cols="10" id="CAT_Custom_869" name="contact[comments]">{% if contact[comments] %}{{ contact[comments] }}{% endif %}</textarea>
+                    <div class="subscribeWrap">
+                        <input type="checkbox" name="contact[subscribe_to_newsletter]"> Subscribe to e-newsletter
+                    </div>
+                    
+                    
+                    
+                    <div class="no-robot">
+                        
+
+                    </div>
+                    
+                    <div style="display: none">
+<input type="text" name="s_content" id="s_content" class="cat_textbox">
+<input type="text" name="s_summary" id="s_summary" class="cat_textbox" value="c8f4ac4d337c40bebf95b2eeb3693758">
+</div>
+
+                    
+                    
+                    <input type="submit" id="catwebformbutton" value="Submit" class="cat_button">
+                </div>
+                <script type="text/javascript" src="https://fashion-uniforms.businesscatalyst.com/CatalystScripts/ValidationFunctions.js?vs=b1702.r463035-phase1"></script>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    var submitcount61767 = 0;
+                    
+                    function checkWholeForm61767(theForm) {
+                        var why = "";
+                        if (theForm.CellPhone) why += isEmpty(theForm.CellPhone.value, "Cell Phone Number");
+                        if (theForm.HomePhone) why += isEmpty(theForm.HomePhone.value, "Home Phone Number");
+                        if (theForm.EmailAddress) why += checkEmail(theForm.EmailAddress.value);
+                      	if (theForm.Location) why += isEmpty(theForm.Location.value, "Location");
+                        if (theForm.FirstName) why += isEmpty(theForm.FirstName.value, "First Name");
+                        if (theForm.LastName) why += isEmpty(theForm.LastName.value, "Last Name");
+                        if (theForm['g-recaptcha-response']) why += reCaptchaV2IsInvalid(theForm, "Please prove you're not a robot");
+                        if (why != "") {
+                            alert(why);
+                            return false;
+                        }
+                        if (submitcount61767 == 0) {
+                            submitcount61767++;
+                            theForm.submit();
+                            return false;
+                        } else {
+                            alert("Form submission is in progress.");
+                            return false;
+                        }
+                    }
+                    //]]>
+                </script>
+            {% endform %}
+        </div>
+    </div>
+</section>
+<section class="address-bg">
+    <div class="container">
+        <h3>ADDRESS</h3>
+        <div class="processDividerStrip"></div>
+        <h4>23 east street, papakura, auckland, new zealand</h4>
+        <div class="contactPhoneEmail">
+            <a href="tel:64092996984">+64 9 299 6984</a> | <a href="mailto:sales@fashionuniforms.co.nz">sales@fashionuniforms.co.nz</a>
+        </div>
+    </div>
+</section>
+
+<section class="map-bg">
+    <div class="google-maps">
+        <iframe style="border: 0px none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.784621501557!2d174.9402384!3d-37.0626154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d72acd534e392f1%3A0x70d77f871f915eb0!2s23+East+St%2C+Papakura%2C+2110!5e0!3m2!1sen!2snz!4v1436447943931" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!-- Begin page content -->
+<div class="bannerImage" style="background:url( '{{ section.settings.main_background_image  | img_url: '1200x' }}' ) cover no-repeat">
+  <div class="logoWrap">
+    <a href="/collections">
+      <img src="{{ 'fashionUniformsLogo.png' | asset_url }}" alt="Fashion Uniforms logo" itemprop="logo">
+    </a>
+  </div>
+</div>
+<!--end-->
+
+{% schema %}
+  {
+
+    "name": "Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "main_background_image",
+        "label": "Banner Image",
+        "info": "Primary Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Internal Image"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Sections",
+        "name": "Large Banner",
+        "settings": {
+            
+        }
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

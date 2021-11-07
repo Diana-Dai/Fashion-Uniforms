@@ -1,0 +1,82 @@
+<section class="manufactured">
+    <div class="container manufacturedWrap-L">
+        <div class=" manufacturedText">
+            <h1>
+                {{ section.settings.feature_heading | newline_to_br}}
+                
+                <!--Manufactured<br />
+In New Zealand-->
+            </h1>
+            <div class="shortGreyHorizontal standAlone"></div>
+            <h2>
+                {{ section.settings.feature_subheading }}
+            </h2>
+            <p>
+                {{ section.settings.feature_body | newline_to_br }}
+            </p>
+            <h4>For more info call:<a href="tel:{{ settings.phone  | replace: " ", "" }}"> {{ settings.phone  }}</a></h4>
+        </div>
+    </div>
+    <div class="container manufacturedWrap-R ">
+        <div class="manuFactureImg-bg">
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "About Feature Banner",
+    "tag": "section",
+    "settings": [
+      
+      {
+        "type": "textarea",
+        "id": "feature_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "feature_subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "textarea",
+        "id": "feature_body",
+        "label": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "feature_image",
+        "label": "Feature Image"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "section",
+      "name": "Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_section_title",
+          "label": "Column Name",
+          "info": "Name, Company"
+
+        },
+        {
+          "type": "textarea",
+          "id": "column_section_body",
+          "label": "Column Body"
+        }
+        
+      ]
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

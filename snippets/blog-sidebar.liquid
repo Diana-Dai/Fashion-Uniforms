@@ -1,0 +1,49 @@
+<!-- /snippets/blog-sidebar.liquid -->
+{% comment %}
+  Recent blog posts
+{% endcomment %}
+
+<h4>
+  {{ 'blogs.sidebar.recent_articles' | t }}
+</h4>
+<div class="BlogRecentPost">
+  <ul class="no-bullets">
+    {% for article in blogs[blog.handle].articles limit:6 %}
+      <li>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+{% comment %}
+  Blog tags
+{% endcomment %}
+
+{% if blog.all_tags.size > 0 %}
+  <hr>
+  <h4>Tags</h4>
+  <div class="BlogTagCloud">
+    {% for tag in article.tags %}
+      {{ tag | link_to_tag: tag }}
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+<hr>
+
+
+<h4>Archive</h4> 
+<div class="BlogPostArchive">
+  <ul>
+    <li>
+      <a href="/fashion-uniforms-blog/calendar/2019/5/" title="2019-5">May 2019 (3)</a>
+    </li>
+    <li>
+      <a href="/fashion-uniforms-blog/calendar/2019/2/" title="2019-2">February 2019 (1)</a>
+    </li>
+  </ul>
+</div>  

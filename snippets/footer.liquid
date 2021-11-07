@@ -1,0 +1,96 @@
+<div class="footer">
+  <div class="container">
+    <div class="footerTopRow">
+	    <div class="forIEwidth">
+	        {% if settings.logo_on_dark != blank %}
+    	        <a href="/index.html">
+    	        	<img class="footLogo" src="{{ settings.logo_on_dark  | img_url: '720x720' }}" alt="Fashion Uniforms logo" itemprop="logo" width="136">
+    	        </a>
+	        {% endif %}
+	    </div>
+    	<div class="footerMenuWrap">
+        <div class="fm-One">
+            <ul>
+                <li><a href="/about-us.html">About Us</a></li>
+                <li><a href="/our-process.html">Our Process</a></li>
+                <li><a href="/uniform-ranges.html">Gallery</a></li>
+                
+            </ul>
+        </div>
+        <div class="fm-Two">
+            <ul>
+                <li class="boldHeading">Uniforms:</li>
+                <li><a href="/healthcare-uniforms.html">Healthcare</a></li>
+                <li><a href="/beauty-uniforms.html">Beauty</a></li>
+                <li><a href="/corporate-uniforms.html">Corporate</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3 physical">
+            <ul>
+                <li class="boldHeading">{{ settings.address-heading-1 }}</li>
+                <li>{{ settings.address-column-1  | newline_to_br }}</li>
+            </ul>
+        </div>
+        <div class="col-md-3 postal">
+            <ul>
+                <li class="boldHeading">{{ settings.address-heading-2 }}</li>
+                <li>{{ settings.address-column-2  | newline_to_br }}</li>
+            </ul>
+            
+        </div>
+        <div class="col-md-3 postal-ChCh">
+            <ul>
+                <li class="boldHeading">{{ settings.address-heading-3 }}</li>
+                <li>{{ settings.address-column-3  | newline_to_br }}</li>
+                
+            </ul>
+        </div>
+    	</div>
+		</div>
+		<!-- end-->
+			<div class="footerBottomRow">
+		    <div class="siteDetails">
+		        All information © 2021 Fashion Uniforms 2015 Ltd<br/>
+		        <a href="/pages/terms-and-conditions">T&Cs</a> | <a href="/pages/privacy-policy">Privacy Policy</a> | Site by <a href="http://www.brandcounsel.co.nz" target="_blank">Brand Counsel</a>
+		    </div>
+		    
+		    <div class="footerContactWrap mobileOff">
+		        {% if settings.phone != blank %}<a href="tel:{{ settings.phone  | replace: " ", "" }}">PHONE: {{ settings.phone  }}</a>   {% endif %}
+		        {% if settings.email != blank %}<a href="mailto:{{ settings.email }}">EMAIL: {{ settings.email }}</a>{% endif %}
+		    </div>
+		    
+		    <div class="footerContactWrap mobileOnly">
+		        {% if settings.phone != blank %}<a href="tel:{{ settings.phone  | replace: " ", "" }}">PHONE: {{ settings.phone }}</a> <br />  {% endif %}
+		        {% if settings.email != blank %}<a href="mailto:sales@fashionuniforms.co.nz">EMAIL: sales@fashionuniforms.co.nz</a> {% endif %}
+		    </div>
+		    {% if settings.footer_social_enable %}
+		    <div class="cntrl-social">
+		      <div class="cntrl-social-icons">
+		      	{% if settings.social_facebook_link != blank %}
+		        <div class="soc-icon-wrap">
+		        	<a href="{{ settings.social_facebook_link }}" target="_blank">
+		        		<img src="{{ 'social-fb.png' | asset_url }}" alt="Facebook icon" >
+		        	</a>
+		        </div>
+		        {% endif %}
+		        {% if settings.social_instagram_link != blank %}
+		        <div class="soc-icon-wrap">
+		        	<a href="{{ settings.social_instagram_link }}" target="_blank">
+		        		<img src="{{ 'social-instagram.png' | asset_url }}" alt="Instagram icon" >
+		        	</a>
+		        </div>
+		        {% endif %}
+		        {% if settings.socail_linkedin_link != blank %}
+		        <div class="soc-icon-wrap">
+		        	<a href="{{ settings.socail_linkedin_link }}" target="_blank">
+		        		<img src="{{ 'social-linkedin.png' | asset_url }}" alt="LinkedIn icon" >
+		        	</a>
+		        </div>
+		        {% endif %}
+		      </div>
+		    </div>
+		    {% endif %}
+		</div>
+		<!-- end-->
+  </div>
+</div>

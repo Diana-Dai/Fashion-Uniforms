@@ -1,0 +1,105 @@
+<style>
+    .bag{
+        background-image: url('{{ "bag.svg" | asset_url }}');
+        background-size: 25px;
+        background-repeat:no-repeat;
+        width: 25px;
+        padding-top: 10px !important;
+        padding-left: 11px !important;
+    }
+    .bag span.badge{
+        border-radius: 15px;
+        background-color: #cd2025;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        display: inline-block;
+        padding: 3px;
+        
+    }
+</style>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container ">
+    <div class="topNavWrap">
+      <div class="navbar-header">
+          	
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="bag mob-only"  href="/cart"><span class="badge">{{cart.item_count}}</span></a>                
+        <a class="mob-only navbar-brand" href="tel:0800223222">CALL 0800 223 222</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        	{% for link in linklists.main-menu.links %}
+            {% comment %}
+              Create a dropdown menu by naming a linklist the same as a link in the parent nav
+
+              More info on dropdowns:
+                - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+            {% endcomment %}
+            {% assign child_list_handle = link.title | handleize %}
+            {% if linklists[child_list_handle].links != blank %}
+            	<li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+								<a href="{{ link.url }}" class="site-nav__link">
+									{{ link.title }}
+								</a>
+								<ul class="site-nav__dropdown">
+                  {% for childlink in linklists[child_list_handle].links %}
+                    <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+                      <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+							</li>
+							<li class="pack100">   </li>
+            {% else %}
+              <li {% if link.active %}class="site-nav--active"{% endif %}>
+                <a href="{{ link.url }}" class="site-nav__link">
+									{{ link.title }}
+								</a>
+              </li>
+              <li class="pack100">   </li>
+            {% endif %}
+          {% endfor %}
+<li class="pack100 wideOnly" style="width:62px">   </li>
+
+					<li>
+					<li class="mob-off">
+						<a class="navbar-brand" href="tel:0800223222">CALL 0800 223 222</a>
+					</li>
+					
+					<li class="pack100" style="width:15px">   </li>
+					<li>
+					
+					
+					
+					<li class="mob-off">
+						<a class="bag" href="/cart"><span class="badge">{{cart.item_count}}</span></a>
+					</li>
+					
+					
+					
+					<li class="pack100" style="width:15px">   </li>
+					<li style="float:right">
+					  <form class="cntrl-search" name="catsearchform41661" method="GET" action="/search" onsubmit="$('#inputsearch').val( $('#inputsearch').val().replace('*', '') + '*' )">
+					    <div class="search-box">
+					      <!-- <input class="searching cat_textbox_small" type="text" name="CAT_Search" id="CAT_Search" placeholder="SEARCH "/>  -->
+                <input type='hidden' value='product' name='type' />
+					      <input class="searching cat_textbox_small fontAwesome" id="inputsearch" type="text" name="q" id="CAT_Search" style="font-family: 'montserrat', FontAwesome;
+font-weight: normal;" placeholder="SEARCH " 
+					            />
+					    </div>
+					  </form>
+					</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
