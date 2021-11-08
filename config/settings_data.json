@@ -434,27 +434,12 @@
               "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
               "hide_linkedin": false
             }
-          },
-          "add6f641-007d-4755-998a-af96c4e52ab7": {
-            "type": "staff",
-            "settings": {
-              "staff_name": "Allen Daliborka",
-              "staff_position": "Agent + CREATIVE ConsultanT",
-              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
-              "staff_mobile": "0800 223 222",
-              "hide_mobile": false,
-              "staff_email": "myemail@email.com",
-              "hide_email": false,
-              "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
-              "hide_linkedin": false
-            }
           }
         },
         "block_order": [
           "2d86ce1a-6b33-44b7-920b-eb5edcbd4c68",
           "553554a7-d5db-43be-918d-98560cd347de",
-          "288f4169-8c27-4e47-a55d-b5b99cb043cd",
-          "add6f641-007d-4755-998a-af96c4e52ab7"
+          "288f4169-8c27-4e47-a55d-b5b99cb043cd"
         ],
         "settings": {
           "title": "Meet Our Team"
