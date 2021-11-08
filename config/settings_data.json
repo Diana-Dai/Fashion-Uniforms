@@ -398,7 +398,7 @@
               "staff_position": "Agent + CREATIVE ConsultanT",
               "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
               "staff_mobile": "0800 223 222",
-              "hide_mobile": false,
+              "hide_mobile": true,
               "staff_email": "myemail@email.com",
               "hide_email": false,
               "staff_linkedin": "https:\/\/www.linkedin.com\/company\/fashionuniformsnz\/",
