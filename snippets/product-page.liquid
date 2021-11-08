@@ -9,25 +9,31 @@
 
 {% endcomment %}
 <style>
+  #productSelect{
+    display: none;
+  }
+  #selectedColor{
+    margin-left: 1.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
     .product-form__input label{
       text-align: center;
     }
     label .color{
       display: inline-block;
-      width: 30px;
-      height: 30px;
-      line-height: 40px;
-      vertical-align: middle;
-      padding: 2px;
+      width: 22px;
+      height: 22px;
     }
-  .product-form__input legend{
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
-    border-bottom: none;
-    font-size: 14px;
-  }
+    .product-form__input legend{
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 5px;
+      font-weight: 700;
+      border-bottom: none;
+      font-size: 14px;
+    }
 
 .product-form__input input[type="radio"]{
   clip: rect(0,0,0,0);
@@ -37,20 +43,23 @@
   width: 1px;
 }
 .product-form__input label{
+  box-sizing: border-box;
   list-style: none;
-  border: solid 1px #333;
+  border: solid 1px rgb(105, 105, 105,0.5);
   font-size: 16px;
   margin-right: 2%;
-  padding: 8px 0;
-  width: 40px;
-  height: 40px;
+  padding: 3px 0;
+  width: 30px;
+  height: 30px;
   text-align: center;
   cursor: pointer;
   font-weight: normal;
 }
+.product-form__input label:hover{
+  border-color:rgb(10, 10, 10) ;
+}
 .product-form__input input:checked + label{
-  background: #333;
-  color: white;
+  border: solid 1.5px rgb(10, 10, 10);
 }
 </style>
   <!-- link to magiczoomplus.css image gallery file -->
@@ -124,7 +133,13 @@
           <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
             {%- for option in product.options_with_values -%}
               <fieldset class="js product-form__input {{ option.name }}">
-                <legend class="form__label">{{ option.name }}:</legend>
+                <legend class="form__label">{{ option.name }}:
+                  {% if option.name == 'Color' %}
+                  {% assign firstColor = option.values.first | split:'#' %}
+                  <span id="selectedColor">{{ firstColor.first }}</span>
+                {% endif %}
+                </legend>
+                
                 {%- for value in option.values -%}
                   <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
                         name="{{ option.name }}"
@@ -132,8 +147,14 @@
                         form="product-form-{{ section.id }}"
                         {% if option.selected_value == value %}checked{% endif %}
                   >
-                  <label  for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                    <span {% if option.name == "Color" %} class="color" style="background: {{ value }}"{% endif %}>
+                  <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                    {% assign color = value | split:'#' %}
+                    {% if color[1] %}
+                      {% assign colorStyle = '#'| append: color[1] %}
+                      {% else %}
+                      {% assign colorStyle = value %}
+                    {% endif %}
+                    <span {% if option.name == "Color" %} class="color" style="background:{{ colorStyle }} "{% endif %}>
                       {% unless option.name == "Color" %}
                         {{ value }}
                       {% endunless %}
@@ -164,7 +185,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-
+            {{ product.selected_or_first_available_variant }}
             <div id="qtyCart">
                 <label>Quantity:</label><br/>
                 <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
@@ -180,13 +201,27 @@
               $('#AddToCartForm').change(function (e) { 
                 e.preventDefault();
                 const op1= $("input[name='Size']:checked").val();
-                const op2 = $("input[name='Color']:checked").val();
-                console.log(op1, op2);
+                if($("input[name='Color']").length > 0){
+                  var op2 = $("input[name='Color']:checked").val();
+                  $('#selectedColor').text(op2.split('#')[0]);
+                }else{
+                  var op2 = '';
+                }
                 $('#productSelect option').each(function (index, item) {
                   if (item.label.indexOf(op1)>-1 && item.label.indexOf(op2)>-1) {
-                    $(item).attr('selected', true);
+
+                    $(item).prop("selected",true);
+                    if ($(item).attr('disabled')) {
+                        $("#addtocart").attr('disabled','disabled');
+                        $("#addtocart").text('Sold Out');
+                    }else{
+                      $("#addtocart").attr('disabled',false);
+                        $("#addtocart").text('Add To Cart');
+                    }
                     $('#shopifyId').val(item.value);
+                    return;
                   }
+                  $(item).attr('selected', false);
                 })
               });
             });

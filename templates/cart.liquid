@@ -7,6 +7,7 @@
 
 {% endcomment %}
 <style>
+
     .cart-table{
         width:100%;
     }
@@ -134,8 +135,18 @@
                     {{ item.product.title }}
                   </a>
                   {% unless item.variant.title contains 'Default' %}
-                    <br>Size: 
-                    <small>{{ item.variant.title }}</small>
+                    {%- for option in item.options_with_values -%}
+                      <div class="product-option">
+                        <small>{{ option.name }}: </small>
+                        {% if option.name == "Color" %}
+                        {% assign color = option.value | split: '#' %}
+                        <small>{{ color[0] }}</small>
+                        {% else %}
+                        <small>{{ option.value }}</small>
+                        {% endif %}
+                      </div>
+                    {%- endfor -%}
+                    
                   {% endunless %}
     
                   {% if settings.cart_vendor_enable %}
