@@ -8,6 +8,40 @@
     - http://schema.org/docs/gs.html
 
 {% endcomment %}
+<style>
+  .product-form__input legend{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    border-bottom: none;
+    font-size: 14px;
+  }
+
+.product-form__input input[type="radio"]{
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+.product-form__input label{
+  list-style: none;
+  border: solid 1px #333;
+  font-size: 16px;
+  margin-right: 2%;
+  padding: 8px 0;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: normal;
+}
+.product-form__input input:checked + label{
+  background: #333;
+  color: white;
+}
+</style>
   <!-- link to magiczoomplus.css image gallery file -->
 <link media="screen" type="text/css" rel="stylesheet" href="/plugins/magiczoomplus/magiczoomplus.css" />
 <!-- link to magiczoomplus.js image gallery file -->
@@ -36,7 +70,6 @@
                     <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
                 </a>
                 
-                
               <!--  <a id="Zoomer" href="{{ featured_image | img_url: 'master' }}" class="MagicZoomPlus" rel="selectors-effect-speed: 600;">
                   <figure class="mz-figure mz-hover-zoom mz-ready">
                     <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
@@ -51,23 +84,16 @@
         <div class="thumbsWrap">
           {% for image in product.images %}
             {% if forloop.index > 1  %}
-
                 <a href="{{ image.src | img_url: 'master' }}" data-fancybox="gallery" rev="{{ image.src | img_url: 'master' }}" >
                   <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
                 </a>
-            
             {% endif %}
-
           {% endfor %}
-
-
-
         </div>
       </div>
         </aside>
         <div class="detailContentWrap">
           <h1>{{ product.title }}</h1>
-          
           <div class="detailWords">
             {{ product.description }}
             <br/>
@@ -82,28 +108,43 @@
             {% endif %}
           </div>
           
-
           {% if product.price > 0  %}
           <div class="price">Price: NZD <span>{{product.price  | money}}</span></div>
           <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
             {% if product.variants.size > 1 %}
-                <div id="size">
-                    <label>Size:</label>
-                    <ul id="sizeSelect">
-                        {% for variant in product.variants %}
-                        <li data-available="{{ variant.available }}" {% if variant.available == false %}class="outofstock" tooltip="Not Available" {% endif %} data-id="{{ variant.id }}"  data-price="{{ variant.price }}">{{ variant.title }}</li>
-                           
-                        {% endfor %}
-                    </ul>
-                    <br/>
-                    <span><a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
-                </div>
-               
+              <div id="size">
+                <label>Size:</label>
+                <ul id="sizeSelect">
+                    {% for variant in product.variants %}
+                    <li data-available="{{ variant.available }}" {% if variant.available == false %}class="outofstock" tooltip="Not Available" {% endif %} data-id="{{ variant.id }}"  data-price="{{ variant.price }}">{{ variant.title }}</li>
+                    {% endfor %}
+                </ul>
+                <br/>
+              </div>
             {% endif %}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="js product-form__input {{ option.name }}">
+                <legend class="form__label">{{ option.name }}:</legend>
+                {%- for value in option.values -%}
+                  <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                        name="{{ option.name }}"
+                        value="{{ value | escape }}"
+                        form="product-form-{{ section.id }}"
+                        {% if option.selected_value == value %}checked{% endif %}
+                  >
+                  <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                    {{ value }}
+                  </label>
+                {%- endfor -%}
+              </fieldset>
+              <span><a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
+            {%- endfor -%}
+
             {% if product.variants.size > 1 %}
                 <input id="shopifyId" type="hidden" name="id" value="">
             {% else %}
                 <input id="shopifyId" type="hidden" name="id" value="{{product.variants[0].id}}">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
             {% endif %}
             <div id="qtyCart">
                 <label>Quantity:</label><br/>
@@ -115,31 +156,15 @@
            
             
             <script>
-                $(function(){
-                    
-                    $("#sizeSelect li").bind("click", function(){
-                        if ( $(this).attr("data-available") == 'true' ){
-                            $("#shopifyId").val( $(this).attr("data-id") );
-                            $(".price span").text( "$" + parseFloat( $(this).attr("data-price") / 100 ).toFixed(2) )
-                            $("#sizeSelect li").removeClass("selected");
-                            $(this).addClass("selected");
-                            $("#qtyCart").show();
-                        }else if ( $("#sizeSelect li").not(".outofstock").length == 0 ){
-                            $(".price span").text( "$" + parseFloat( $(this).attr("data-price") / 100 ).toFixed(2) )
-                            $("#qtyCart").hide();
-                        }
-                    })
-                    if ( $("#sizeSelect li").not(".outofstock").length == 0 ){
-                        $("#sizeSelect li").first().trigger("click");
-                    }else{
-                        $("#sizeSelect li").not(".outofstock").first().trigger("click");
-                    } 
-                    
-                })
+             document.addEventListener('DOMContentLoaded', function() {
+               const hiddenInput = document.querySelector('#AddToCartForm input[name="id"]');
+               document.querySelector('.product-form__input').addEventListener('change', function(event) {
+                debugger;
+                hiddenInput.value = event.currentTarget.value;
+              });
+             })
+             
             </script>
-          
-          
-          
           </form>
           {% endif %}
 
