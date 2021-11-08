@@ -395,8 +395,8 @@
             "settings": {
               "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
               "staff_name": "Allen Daliborka",
-              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
-              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_position": "Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
               "staff_mobile": "0800 223 222",
               "hide_mobile": false,
               "staff_email": "myemail@email.com",
@@ -410,8 +410,8 @@
             "settings": {
               "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
               "staff_name": "Allen Daliborka",
-              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
-              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_position": "Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
               "staff_mobile": "0800 223 222",
               "hide_mobile": false,
               "staff_email": "myemail@email.com",
@@ -425,8 +425,8 @@
             "settings": {
               "staff_image": "shopify:\/\/shop_images\/pexels-maxim-klemedinov-10071117_1.jpg",
               "staff_name": "Allen Daliborka",
-              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
-              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_position": "Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
               "staff_mobile": "0800 223 222",
               "hide_mobile": false,
               "staff_email": "myemail@email.com",
@@ -439,8 +439,8 @@
             "type": "staff",
             "settings": {
               "staff_name": "Allen Daliborka",
-              "staff_position": "Stacy Swiderski Agent + CREATIVE ConsultanT",
-              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum. <br\/>Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec <br\/>ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris<br\/> iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
+              "staff_position": "Agent + CREATIVE ConsultanT",
+              "staff_description": "<p>Duis pharetra lorem ex, at tincidunt justo iaculis fermentum.Pellentesque vehicula maximus accumsan. Sed ut congue est. Integer vitae magna justo. Aliquam magna nisl, condimentum ut ante non, interdum bibendum orci. Quisque eu mi vel sapien pellentesque eleifend. Donec ultricies lectus elit. Quisque efficitur ultrices arcu et dictum. Mauris iaculis tempor scelerisque. Aliquam a accumsan quam, non porta sapien.<br\/><\/p>",
               "staff_mobile": "0800 223 222",
               "hide_mobile": false,
               "staff_email": "myemail@email.com",
@@ -457,6 +457,7 @@
           "add6f641-007d-4755-998a-af96c4e52ab7"
         ],
         "settings": {
+          "title": "Meet Our Team"
         }
       }
     },

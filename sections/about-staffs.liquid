@@ -1,8 +1,4 @@
 <style>
-.staff-info{
-  margin: 0 2rem;
-}
-
 .staff-info__header{
   margin: 2rem 0;
   text-align: center;
@@ -12,20 +8,34 @@
   flex-wrap: wrap;
 }
 .staff-info__container .staff-info__item{
+  padding: 5rem 1.5rem;
+}
+@media screen and (min-width: 750px) {
+  .staff-info__container .staff-info__item{
   width: 33.3%;
-  padding: 1.5rem;
 }
+}
+
 .staff-info__container .staff-info__item h3{
-  white-space: pre-wrap;
   font-size: 13px;
-}
-.staff-info__container .staff-info__item strong{
+  text-transform: uppercase; 
+  line-height: 2em; 
   letter-spacing: .2em;
-  text-transform: uppercase;  
+  text-align: left !important;
 }
+
+.staff-img_wrapper{
+  padding-bottom: 140%;
+  position: relative;
+  overflow: hidden;
+}
+
 .staff-info__container .staff-info__item img{
+  left: 0%;
+  top: 0%;
   width: 100%;
-  height: auto;
+  height: 100%;
+  position: absolute;
   background: linear-gradient(
     45deg,
     #acacac 0%,
@@ -35,24 +45,41 @@
 .staff-info__container .staff-header{
   margin: 2rem 0;
 }
-
+.staff-profile__details{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+}
+.staff-profile__details div{
+  margin-right: 2rem;
+  padding: 0.3rem 0;
+}
+.staff-profile__details svg{
+  vertical-align: sub;
+}
 </style>
-<div class="staff-info">
+<div class="staff-info container contactWords">
   <div class="staff-info__header">
       <h2>{{ section.settings.title }}</h2>
+      <div class="processDividerStrip"></div>
   </div>
   <div class="staff-info__container">
   
     {% for block in section.blocks %}
       <div class="staff-info__item">
         <div class="staff-img_wrapper">
-          <img src="{{ block.settings.staff_image  | img_url: '300x' }}" alt="{{block.settings.staff_image.alt}}" 
-          width="{{ block.settings.staff_image.width }}"
-          height="{{ block.settings.staff_image.height }}">
+          {% if block.settings.staff_image != blank %}
+            <img loading="lazy" src="{{ block.settings.staff_image  | img_url: '300x' }}" alt="{{block.settings.staff_image.alt}}" 
+            width="{{ block.settings.staff_image.width }}"
+            height="{{ block.settings.staff_image.height }}">
+          {% else %}
+            <img loading="lazy" >
+          {% endif %}
         </div>
         <div class="staff-header">
           <h3>
-            <strong>{{ block.settings.staff_name }}</strong>
+            <strong>{{ block.settings.staff_name }}</strong><br>
             {{ block.settings.staff_position }}
           </h3>
         </div>
@@ -61,8 +88,31 @@
 
         </div>
         <div class="staff-profile">
-          <div class="staff-profile__number">
-            
+          <div class="staff-profile__details">
+              {% if block.settings.hide_mobile != true %}
+              <div class="staff-profile__number">
+                {% render 'icon-phone' %}
+                <a href="tel:{{block.settings.staff_mobile}}">
+                  <span>{{ block.settings.staff_mobile }}</span>
+                </a>
+                </div>
+              {% endif %}
+              {% if block.settings.hide_email != true %}
+                <div class="staff-profile__email">
+                  {% render 'icon-mail' %}
+                  <a href="tel:{{block.settings.staff_email}}">
+                  <span>{{ block.settings.staff_email }}</span>
+                  </a>
+                </div>
+              {% endif %}
+            {% if block.settings.hide_linkedin != true %}
+              <div class="staff-profile__linkedin">
+                {% render 'icon-linkedin' %}
+                <a href="{{ block.settings.staff_linkedin }}">
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
