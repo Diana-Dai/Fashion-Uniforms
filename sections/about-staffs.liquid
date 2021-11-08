@@ -1,3 +1,42 @@
+<style>
+  .staff-info{
+  margin: 0 2rem;
+}
+
+.staff-info__header{
+  margin: 2rem 0;
+  text-align: center;
+}
+.staff-info__container{
+  display:flex;
+  flex-wrap: wrap;
+}
+.staff-info__container .staff-info__item{
+  width: 33.3%;
+  padding: 1.5rem;
+}
+.staff-info__container .staff-info__item h3{
+  white-space: pre-wrap;
+  font-size: 13px;
+}
+.staff-info__container .staff-info__item strong{
+  letter-spacing: .2em;
+  text-transform: uppercase;  
+}
+.staff-info__container .staff-info__item img{
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    45deg,
+    #acacac 0%,
+    #3f3f3f 100%
+  );
+}
+.staff-info__container .staff-header{
+  margin: 2rem 0;
+}
+
+</style>
 <div class="staff-info">
   <div class="staff-info__header">
       <h2>{{ section.settings.title }}</h2>
@@ -12,8 +51,10 @@
           height="{{ block.settings.staff_image.height }}">
         </div>
         <div class="staff-header">
-          <strong>{{ block.settings.staff_name }}</strong>
-          <p>{{ block.settings.staff_position }}</p>
+          <h3>
+            <strong>{{ block.settings.staff_name }}</strong>
+            {{ block.settings.staff_position }}
+          </h3>
         </div>
         <div class="staff-description">
           <p>{{ block.settings.staff_description }}</p>
@@ -114,39 +155,3 @@
 }
 
 {% endschema %}
-
-{% stylesheet %}
-
-.staff-info{
-  margin: 0 2rem;
-}
-
-.staff-info__header{
-  margin: 2rem 0;
-  text-align: center;
-}
-.staff-info__container{
-  display:flex;
-  flex-wrap: wrap;
-}
-.staff-info__container .staff-info__item{
-  width: 50%;
-  padding: 1.5rem;
-}
-.staff-info__container .staff-info__item img{
-  width: 100%;
-  height: auto;
-  background: linear-gradient(
-    45deg,
-    #acacac 0%,
-    #3f3f3f 100%
-  );
-}
-.staff-info__container .staff-header{
-  margin: 2.5rem 0;
-}
-
-.staff-info__container .staff-header p{
-  margin-top: 0.8rem;
-}
-{% endstylesheet %}
