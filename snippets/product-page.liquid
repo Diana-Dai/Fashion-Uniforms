@@ -9,6 +9,17 @@
 
 {% endcomment %}
 <style>
+    .product-form__input label{
+      text-align: center;
+    }
+    label .color{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 40px;
+      vertical-align: middle;
+      padding: 2px;
+    }
   .product-form__input legend{
     display: inline-block;
     max-width: 100%;
@@ -111,17 +122,6 @@
           {% if product.price > 0  %}
           <div class="price">Price: NZD <span>{{product.price  | money}}</span></div>
           <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
-            {% if product.variants.size > 1 %}
-              <div id="size">
-                <label>Size:</label>
-                <ul id="sizeSelect">
-                    {% for variant in product.variants %}
-                    <li data-available="{{ variant.available }}" {% if variant.available == false %}class="outofstock" tooltip="Not Available" {% endif %} data-id="{{ variant.id }}"  data-price="{{ variant.price }}">{{ variant.title }}</li>
-                    {% endfor %}
-                </ul>
-                <br/>
-              </div>
-            {% endif %}
             {%- for option in product.options_with_values -%}
               <fieldset class="js product-form__input {{ option.name }}">
                 <legend class="form__label">{{ option.name }}:</legend>
@@ -132,13 +132,17 @@
                         form="product-form-{{ section.id }}"
                         {% if option.selected_value == value %}checked{% endif %}
                   >
-                  <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                    {{ value }}
+                  <label  for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                    <span {% if option.name == "Color" %} class="color" style="background: {{ value }}"{% endif %}>
+                      {% unless option.name == "Color" %}
+                        {{ value }}
+                      {% endunless %}
+                    </span>
                   </label>
                 {%- endfor -%}
               </fieldset>
-              <span><a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
             {%- endfor -%}
+            <span><a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
 
             {% if product.variants.size > 1 %}
                 <input id="shopifyId" type="hidden" name="id" value="">
@@ -146,6 +150,21 @@
                 <input id="shopifyId" type="hidden" name="id" value="{{product.variants[0].id}}">
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
             {% endif %}
+
+            <select name="id" id="productSelect">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option value="{{ variant.id }}">
+                    {{ variant.title }} - {{ variant.price | money_with_currency }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - sold out
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
             <div id="qtyCart">
                 <label>Quantity:</label><br/>
                 <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
@@ -154,23 +173,25 @@
                 </button>
             </div>
            
-            
-            <script>
-             document.addEventListener('DOMContentLoaded', function() {
-               const hiddenInput = document.querySelector('#AddToCartForm input[name="id"]');
-               document.querySelector('.product-form__input').addEventListener('change', function(event) {
-                debugger;
-                hiddenInput.value = event.currentTarget.value;
-              });
-             })
-             
-            </script>
           </form>
           {% endif %}
-
-            
+          <script>
+            $(document).ready(function () {
+              $('#AddToCartForm').change(function (e) { 
+                e.preventDefault();
+                const op1= $("input[name='Size']:checked").val();
+                const op2 = $("input[name='Color']:checked").val();
+                console.log(op1, op2);
+                $('#productSelect option').each(function (index, item) {
+                  if (item.label.indexOf(op1)>-1 && item.label.indexOf(op2)>-1) {
+                    $(item).attr('selected', true);
+                    $('#shopifyId').val(item.value);
+                  }
+                })
+              });
+            });
+          </script>
           <div class="goBackLinks">                
-            
             {% if collection %}            
                 <a href="{{ collection.url }}" title="Back to the {{ collection.title }} collection page">Go back</a>
             {% endif %}
@@ -181,38 +202,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 {% comment %}
@@ -231,7 +220,7 @@
       * E.g. multiple currencies http://docs.shopify.com/manual/configuration/store-customization/currencies-and-translations/currencies/how-to-toggle-between-two-currencies
 {% endcomment %}
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-<script>
+<!-- <script>
   var selectCallback = function(variant, selector) {
     timber.productPage({
       money_format: "{{ shop.money_format }}",
@@ -257,4 +246,4 @@
       $('.selector-wrapper').hide();
     {% endif %}
   });
-</script>
+</script> -->
