@@ -1,5 +1,15 @@
 
 <style>
+  .product-sort{
+    padding: 0 4rem;
+  }
+  .filters .dropdown-menu{
+    padding: 1rem 4rem;
+  }
+  .dropdown-menu{
+    box-shadow: none;
+    padding: 1rem 2rem;
+  }
   .collectionImg{
     height: 300px !important;
   }
@@ -7,7 +17,7 @@
     list-style: none;
   }
   #ProductGridContainer{
-    padding:  0 4rem;
+    padding:  0 15rem;
   }
   #ProductGridContainer .listItemWrap{
     width: auto;
@@ -81,6 +91,11 @@
     vertical-align: -10%;
     fill: #CD2025;
   }
+  .multiselect-container label{
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+  }
 </style>
 
 {% assign colorTags = '' %}
@@ -147,7 +162,13 @@
                 {% if option != blank %}
                   <label class="checkbox">
                   <input type="radio" name="multiselect_Sort" value="{{ option.value | escape }}">
-                  {{ option.name | escape }}
+                  {% if option.name == 'Price, low to high' %}
+                    Lowest Price
+                  {% elsif option.name == "Price, high to low" %}
+                    Highest Price
+                  {% else %}
+                    {{ option.name }}
+                  {% endif %}
                 {% endif %}
                 </label>
                 {% endfor %}
