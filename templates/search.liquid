@@ -19,6 +19,16 @@
   #ProductGridContainer{
     padding:  0 15rem;
   }
+  .middle-container{
+    padding-right: 15rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .middle-container span{
+    margin: 0 1rem;
+  }
   #ProductGridContainer .listItemWrap{
     width: auto;
   }
@@ -45,6 +55,10 @@
     #ProductGridContainer ul li{
     width: 33.3%;
     padding: 0 2rem;
+  }
+  .middle-container,
+  #ProductGridContainer{
+    padding:  0 1rem;
   }
   }
   @media screen and (max-width:780px) {
@@ -95,6 +109,19 @@
     font-weight: normal;
     letter-spacing: 0.5px;
     cursor: pointer;
+  }
+  #clearFilters{
+    width: 240px;
+    text-align: left;
+    padding: 5px 20px;
+    border-radius: 20px;
+    box-shadow: none;
+    border: none;
+    color: #575454;
+    text-transform: uppercase;
+  }
+  #clearFilters:hover{
+    color: #fff;
   }
 </style>
 
@@ -228,8 +255,15 @@
       </div>
     </div>
     {%- if paginate.pages > 1 -%}
-    <div class="pagination">
-      {{ paginate | default_pagination }}
+    <div class="middle-container">
+      <div>
+        <button id="clearFilters">
+          Clear filters
+        </button>
+      </div>
+      <div class="pagination">
+        {{ paginate | default_pagination }}
+      </div>
     </div>
     {%- endif -%}
   </div>
