@@ -404,19 +404,7 @@ align-items: center;
                           {% endif %}
                           {{ item.price | money }} 
                         </div>
-                        <select name="id" id="productSelect">
-                          {% for variant in item.variants %}
-                            {% if variant.available %}
-                              <option value="{{ variant.id }}">
-                                {{ variant.title }} - {{ variant.price | money_with_currency }}
-                              </option>
-                            {% else %}
-                              <option disabled="disabled">
-                                {{ variant.title }} - sold out
-                              </option>
-                            {% endif %}
-                          {% endfor %}
-                        </select>
+                        <div id="option"></div>
                       </div>
                     </a>
                   {%- endcase -%}
@@ -440,7 +428,6 @@ align-items: center;
   $('#sortBy').change(function (e) { 
     e.preventDefault();
     const selectedSort = $("input[type='radio']:checked").val();
-    console.log(selectedSort);
     const url = window.location + '&filter.v.price.gte=&filter.v.price.lte=&sort_by=' + selectedSort;
     renderSectionFromFetch(url);
   });
@@ -473,12 +460,14 @@ align-items: center;
       });
   }
 
+
+
   function renderProductGridContainer(html) {
     document.getElementById('ProductGridContainer').innerHTML = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductGridContainer').innerHTML;
     filterProducts(selectedTags);
   }
 
-  function getSelectedColor() {
+  function setSelectedColor() {
     let selectedColor = [];
     $('#selectedColor').empty();
     $('input[name="filter.v.option.color"]').each(function () {
@@ -486,16 +475,31 @@ align-items: center;
         selectedColor.push($(this).val())
       }
       })
-    if (selectedColor.length > 0) {
+    
+      if (selectedColor.length > 0) {
       $('#selectedColor').append('<span>Color:</span>');;        
       for (let index = 0; index < selectedColor.length; index++) {
         const newNode = $(`<span class="color">${selectedColor[index]}</span>`);
         $('#selectedColor').append(newNode);;        
       }
 
+      // update products
+      $('#ProductGridContainer').children().each(function (item) {
+        var producturl = window.location.hostname + $(this).find('a').attr('href');
+        console.log(producturl);
+        getVariantOptions();
+      })
     }
-     }
-
+  }
+  function getVariantOptions(producturl) {
+    debugger
+    fetch(producturl)
+      .then(response => response.text())
+      .then((responseText) => {
+        const html = responseText;
+        // document.getElementById('options').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('.globo-swatch-list').innerHTML;
+      });
+  }
  $('form.filter-form').click(function (e) {
    if(e.target.tagName === "INPUT"){
    $(this).submit();
@@ -503,6 +507,6 @@ align-items: center;
   })
 
   $(document).ready(function () {
-   getSelectedColor()
+   setSelectedColor()
   });
 </script>
