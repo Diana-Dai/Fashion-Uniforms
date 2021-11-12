@@ -497,7 +497,7 @@ align-items: center;
       .then((responseText) => {
         const producthtml = responseText;
         console.log(producthtml);
-        console.log( new DOMParser().parseFromString(producthtml, 'text/html').find('.globo-swatch-list'));
+        console.log( new DOMParser().parseFromString(producthtml, 'text/html').querySelector('.globo-swatch-list'));
         document.getElementById('options').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('.globo-swatch-list').innerHTML;
       });
   }
