@@ -169,9 +169,7 @@
                 {%- endfor -%}
               </fieldset>
             {%- endfor -%} -->
-            <span>
-              
-              <a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
+
 
             {% if product.variants.size > 1 %}
                 <input id="shopifyId" type="hidden" name="id" value="">
@@ -193,6 +191,9 @@
                 {% endif %}
               {% endfor %}
             </select>
+                        <span>
+              
+              <a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
             <div id="qtyCart">
                 <label>Quantity:</label><br/>
                 <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
