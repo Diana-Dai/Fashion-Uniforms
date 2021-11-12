@@ -205,37 +205,37 @@
           </form>
           {% endif %}
           <script>
-            $(document).ready(function () {
-              $('#AddToCartForm').change(function (e) { 
-                e.preventDefault();
-                if($("input[name='Size']").length > 0){
-                  var op1= $("input[name='Size']:checked").val();
-                }else{
-                  var op1 = '';
-                }
-                if($("input[name='Color']").length > 0){
-                  var op2 = $("input[name='Color']:checked").val();
-                  $('#selectedColor').text(op2.split('#')[0]);
-                }else{
-                  var op2 = '';
-                }
-                $('#productSelect option').each(function (index, item) {
-                  if (item.label.indexOf(op1)>-1 && item.label.indexOf(op2)>-1) {
-                    $(item).prop("selected",true);
-                    if ($(item).attr('disabled')) {
-                        $("#addtocart").attr('disabled','disabled');
-                        $("#addtocart").text('Sold Out');
-                    }else{
-                      $("#addtocart").attr('disabled',false);
-                        $("#addtocart").text('Add To Cart');
-                    }
-                    $('#shopifyId').val(item.value);
-                    return;
-                  }
-                  $(item).attr('selected', false);
-                })
-              });
-            });
+            // $(document).ready(function () {
+            //   $('#AddToCartForm').change(function (e) { 
+            //     e.preventDefault();
+            //     if($("input[name='Size']").length > 0){
+            //       var op1= $("input[name='Size']:checked").val();
+            //     }else{
+            //       var op1 = '';
+            //     }
+            //     if($("input[name='Color']").length > 0){
+            //       var op2 = $("input[name='Color']:checked").val();
+            //       $('#selectedColor').text(op2.split('#')[0]);
+            //     }else{
+            //       var op2 = '';
+            //     }
+            //     $('#productSelect option').each(function (index, item) {
+            //       if (item.label.indexOf(op1)>-1 && item.label.indexOf(op2)>-1) {
+            //         $(item).prop("selected",true);
+            //         if ($(item).attr('disabled')) {
+            //             $("#addtocart").attr('disabled','disabled');
+            //             $("#addtocart").text('Sold Out');
+            //         }else{
+            //           $("#addtocart").attr('disabled',false);
+            //             $("#addtocart").text('Add To Cart');
+            //         }
+            //         $('#shopifyId').val(item.value);
+            //         return;
+            //       }
+            //       $(item).attr('selected', false);
+            //     })
+            //   });
+            // });
           </script>
           <div class="goBackLinks">                
             {% if collection %}            
