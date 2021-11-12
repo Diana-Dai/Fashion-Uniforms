@@ -497,7 +497,7 @@ align-items: center;
       .then(response => response.text())
       .then((responseText) => {
         const html = responseText;
-        // document.getElementById('options').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('.globo-swatch-list').innerHTML;
+        document.getElementById('options').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('.globo-swatch-list').innerHTML;
       });
   }
  $('form.filter-form').click(function (e) {
