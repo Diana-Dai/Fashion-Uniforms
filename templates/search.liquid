@@ -496,7 +496,7 @@ align-items: center;
       .then(response => response.text())
       .then((responseText) => {
         const producthtml = responseText;
-        document.getElementById('options').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('#AddToCartForm').innerHTML;
+        document.getElementById('options').innerHTML = new DOMParser().parseFromString(producthtml, 'text/html').querySelector('#AddToCartForm').innerHTML;
       });
   }
  $('form.filter-form').click(function (e) {
