@@ -717,20 +717,20 @@ form#product-form select#product-variants {
 /* Collection page */
   .swatches-globo .swatch--gl li .globo-style--button {
     border-color: #000000;
-    color: #0a0a0a;
+    color: #000000;
     background-color: #ffffff;
   }
   
   .swatches-globo .swatch--gl li .globo-style--button:hover {
-    border-color: #000000;
+    border-color: #58468c;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #58468c;
   }
   
   .swatches-globo .ul-swatches-list li.swatches-options input:checked + .globo-style--button {
-    border-color: #000000;
+    border-color: #58468c;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #58468c;
   }
   
   .swatches-globo .swatch--gl li .globo-border-color-swatch:not(.globo-border-style-none) {
