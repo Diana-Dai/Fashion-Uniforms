@@ -487,7 +487,7 @@ align-items: center;
       $('#ProductGridContainer').children().each(function (item) {
         var producturl = window.location.hostname + $(this).find('a').attr('href');
         console.log(producturl);
-        getVariantOptions();
+        getVariantOptions(producturl);
       })
     }
   }
