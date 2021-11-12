@@ -137,7 +137,7 @@
           {% if product.price > 0  %}
           <div class="price">Price: NZD <span>{{product.price  | money}}</span></div>
           <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
-            {%- for option in product.options_with_values -%}
+            <!-- {%- for option in product.options_with_values -%}
               <fieldset class="js product-form__input {{ option.name }}">
                 <legend class="form__label">{{ option.name }}:
                   {% if option.name == 'Color' %}
@@ -168,7 +168,7 @@
                   </label>
                 {%- endfor -%}
               </fieldset>
-            {%- endfor -%}
+            {%- endfor -%} -->
             <span>
               
               <a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
