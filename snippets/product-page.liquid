@@ -200,7 +200,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-                        <span>
+             <span>
               
               <a style="text-decoration:underline" data-fancybox="sizechart" href="{{ "sizechart.png" | asset_url }}">View Size Chart</a></span>
             <div id="qtyCart">
@@ -226,7 +226,8 @@
   </div>
 </section>
 
-
+{% if configs.displayColors[option_value] %}background-color: {{ configs.displayColors[option_value] }}; font-size: 0;
+                        {% if configs.displaySelectType[option_value] == 2 %}{% if configs.displayColors2[option_value] %}background: linear-gradient( -45deg, {{ configs.displayColors2[option_value] }} 50%, {{ configs.displayColors[option_value] }} 50% );{% endif %}{% endif %}{% endif %}
 {% comment %}
   To take advantage of a callback on the select dropdown, add option_selection.js
   and customize the JS in timber.productPage as needed.
