@@ -1,4 +1,6 @@
 
+{{ 'swatch-colors.css' | asset_url | stylesheet_tag }}
+{{ 'product-form.css' | asset_url | stylesheet_tag }}
 <style>
   .facet-filters{
     display: flex;
@@ -187,6 +189,14 @@ align-items: center;
     fill: none;
     stroke: #6d6e71;
   }
+  #options{
+    text-align: center;
+    margin-bottom: 0.4rem;
+    display: none;
+  }
+  .show_color_swatches #options{
+    display: block;
+  }
 </style>
 {% assign respond_js_secret_key = shop.domain | md5 %}
 {% unless search.terms == respond_js_secret_key %}
@@ -347,23 +357,6 @@ align-items: center;
         <div id="selectedColor">
 
         </div>
-        <!-- {%- for filter in search.filters -%}
-          {%- if filter.type == "price_range" -%}
-            {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
-              <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
-                {%- assign min_value = filter.min_value.value | default: 0 -%}
-                {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
-                {{ min_value | money }} - {{ max_value | money }} X
-              </a>
-            {%- endif -%}
-          {%- else -%}
-            {%- for filter_value in filter.active_values -%}
-              <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
-                {{ filter_value.label }}
-              </a>
-            {%- endfor -%}
-          {%- endif- %}
-        {%- endfor -%} -->
       </div>
     {%- if paginate.pages > 1 -%}
       <div class="pagination">
@@ -398,13 +391,40 @@ align-items: center;
                             <img loading="lazy" width="{{item.featured_image.width}}" height="{{item.featured_image.height}}" src="{{ item.featured_image.src | img_url: 'large' }}" alt="{{ item.featured_image.alt | escape }}">
                           </figure>
                         <h2>{{ item.title }}</h2>
+                        <div id="options">
+                          {%- for option in item.options_with_values -%}
+                          {% if option.name == 'Color' %}
+                              {%- for value in option.values -%}
+                                <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                                      name="{{ option.name }}"
+                                      value="{{ value | escape }}"
+                                      form="product-form-{{ section.id }}"
+                                      {% if option.selected_value == value %}checked{% endif %}
+                                >
+                                <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                                  <span {% if option.name == "Color" %} class="swatch_color_{{value | downcase}} color" {% endif %}>
+                                    {% unless option.name == "Color" %}
+                                      {{ value }}
+                                    {% endunless %}
+                                  </span>
+                                </label>
+                              {%- endfor -%}
+                          {% endif %}
+                          {%- endfor -%}
+                          {% if item.variants.size > 1 %}
+                              <input id="shopifyId" type="hidden" name="id" value="">
+                          {% else %}
+                              <input id="shopifyId" type="hidden" name="id" value="{{product.variants[0].id}}">
+                              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                          {% endif %}
+                      </div>
                         <div class="price" style="text-align:center">
                           {% if item.price < item.compare_at_price_min %}
                               <span class="strikeout">{{ item.compare_at_price_min | money }}</span>
                           {% endif %}
                           {{ item.price | money }} 
                         </div>
-                        <div id="options"></div>
+
                       </div>
                     </a>
                   {%- endcase -%}
@@ -459,8 +479,6 @@ align-items: center;
       });
   }
 
-
-
   function renderProductGridContainer(html) {
     document.getElementById('ProductGridContainer').innerHTML = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductGridContainer').innerHTML;
     filterProducts(selectedTags);
@@ -475,12 +493,18 @@ align-items: center;
       }
       })
     
-      if (selectedColor.length > 0) {
+    if (selectedColor.length > 0) {
       $('#selectedColor').append('<span>Color:</span>');;        
       for (let index = 0; index < selectedColor.length; index++) {
         const newNode = $(`<span class="color">${selectedColor[index]}</span>`);
         $('#selectedColor').append(newNode);;        
       }
+
+      // Show color swatches
+      $('#ProductGridContainer').addClass('show_color_swatches');
+    }else{
+      $('#ProductGridContainer').removeClass('show_color_swatches');
+      
     }
   }
 
@@ -491,6 +515,7 @@ align-items: center;
   })
 
   $(document).ready(function () {
-   setSelectedColor()
+   setSelectedColor();
+
   });
 </script>
