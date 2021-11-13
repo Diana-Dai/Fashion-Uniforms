@@ -18,6 +18,7 @@ label .color{
   display: inline-block;
   width: 22px;
   height: 22px;
+  background-color: currentColor;
 }
 .product-form__input legend{
   text-transform: uppercase;

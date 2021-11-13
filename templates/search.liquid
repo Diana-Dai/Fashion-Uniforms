@@ -134,6 +134,7 @@ align-items: center;
     font-weight: normal;
     letter-spacing: 0.5px;
     cursor: pointer;
+    white-space: nowrap;
   }
   #selectedColor{
     margin: 1rem 0;
@@ -198,6 +199,9 @@ align-items: center;
     display: block;
   }
 </style>
+
+<script src="{{ 'swatch.js' | asset_url }}" defer></script>
+
 {% assign respond_js_secret_key = shop.domain | md5 %}
 {% unless search.terms == respond_js_secret_key %}
 
@@ -402,7 +406,11 @@ align-items: center;
                                       {% if option.selected_value == value %}checked{% endif %}
                                 >
                                 <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                                  <span {% if option.name == "Color" %} class="swatch_color_{{value | downcase}} color" {% endif %}>
+                                  <span 
+                                  {% if option.name == "Color" %}
+                                   class="swatch_color_{{value | downcase}} color"
+                                   style="color: {{ value | escape}};"
+                                   {% endif %}>
                                     {% unless option.name == "Color" %}
                                       {{ value }}
                                     {% endunless %}

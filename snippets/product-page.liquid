@@ -16,6 +16,8 @@
 <!-- link to magiczoomplus.js image gallery file -->
 {{ 'magiczoomplus.js' | asset_url | script_tag }}
 
+<script src="{{ 'swatch.js' | asset_url }}" defer></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
@@ -96,7 +98,11 @@
                         {% if option.selected_value == value %}checked{% endif %}
                   >
                   <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                    <span {% if option.name == "Color" %} class="swatch_color_{{value | downcase}} color" {% endif %}>
+                    <span 
+                    {% if option.name == "Color" %}
+                     class="swatch_color_{{value | downcase}} color"
+                     style="color: {{ value | escape}};"
+                     {% endif %}>
                       {% unless option.name == "Color" %}
                         {{ value }}
                       {% endunless %}
