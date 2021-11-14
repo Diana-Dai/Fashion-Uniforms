@@ -1,0 +1,12 @@
+/* Update the color swatch here */
+
+/* Custom color names must begin with ".swatch_color_" */
+/* Add the name of the product variant color all lowercase and without spaces */
+/* Adding an existing CSS color name to the end of ".swatch_color_" overwrites the default CSS color */
+
+
+/* Examples */
+
+/* .swatch_color_butteryellow {color: #F3EF7D;} */
+/* .swatch_color_grape {color: #5F5387;} */
+/* .swatch_color_navy {color: #0d0d73;} */
