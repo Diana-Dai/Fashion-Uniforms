@@ -409,7 +409,7 @@ align-items: center;
                                   <span 
                                   {% if option.name == "Color" %}
                                    class="swatch_color_{{value | downcase}} color"
-                                   style="color: {{ value | escape}};"
+                                   data-color="{{ value | escape}}"
                                    {% endif %}>
                                     {% unless option.name == "Color" %}
                                       {{ value }}
