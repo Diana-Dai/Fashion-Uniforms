@@ -201,11 +201,9 @@ align-items: center;
   #options{
     text-align: center;
     margin-bottom: 0.4rem;
-    display: none;
-  }
-  .show_color_swatches #options{
     display: block;
   }
+
 </style>
 
 <script src="{{ 'swatch.js' | asset_url }}" defer></script>
@@ -515,12 +513,10 @@ align-items: center;
         const newNode = $(`<span class="color">${selectedColor[index]}</span>`);
         $('#selectedColor').append(newNode);;        
       }
-
       // Show color swatches
-      $('#ProductGridContainer').addClass('show_color_swatches');
+      // $('#ProductGridContainer').addClass('show_color_swatches');
     }else{
-      $('#ProductGridContainer').removeClass('show_color_swatches');
-      
+      // $('#ProductGridContainer').removeClass('show_color_swatches');
     }
   }
 
@@ -532,6 +528,5 @@ align-items: center;
 
   $(document).ready(function () {
    setSelectedColor();
-
   });
 </script>
