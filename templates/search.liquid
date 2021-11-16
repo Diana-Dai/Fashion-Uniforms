@@ -18,7 +18,8 @@ align-items: center;
     padding: 1rem 2rem;
   }
   .collectionImg{
-    /* height: 300px !important; */
+    position: relative;
+    padding-top: 135%;
     text-align: center;
   }
   .grid__item{
@@ -41,11 +42,18 @@ align-items: center;
   .middle-container span{
     margin: 0 1rem;
   }
-
+  #ProductGridContainer .listItemWrap span{
+    z-index: 1;
+    top: 0;
+  }
   #ProductGridContainer .listItemWrap img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    max-width: none !important;
+    height: 100%;
+    object-fit: cover;
   }
   #ProductGridContainer ul{
     padding-left: 0;
