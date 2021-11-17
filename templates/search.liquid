@@ -1,5 +1,3 @@
-
-{{ 'swatch-colors.css' | asset_url | stylesheet_tag }}
 {{ 'product-form.css' | asset_url | stylesheet_tag }}
 <style>
   .facet-filters{
@@ -198,15 +196,18 @@ align-items: center;
     fill: none;
     stroke: #6d6e71;
   }
-  #options{
+  .options{
     text-align: center;
     margin-bottom: 0.4rem;
     display: block;
   }
-
+  .grid__item:hover .price{
+    color: #828282;
+  }
+  .options label:hover{
+    border: solid 1px #0a0a0a;
+  }
 </style>
-
-<script src="{{ 'swatch.js' | asset_url }}" defer></script>
 
 {% assign respond_js_secret_key = shop.domain | md5 %}
 {% unless search.terms == respond_js_secret_key %}
@@ -351,7 +352,6 @@ align-items: center;
     <div class="middle-container">
       <div class="active-filters">
         <a id="clearFilters" href="{{ routes.search_url }}?sort_by={{ search.sort_by }}&q={{ search.terms }}" class="active-filters__clear">Clear all
-
           <svg class="icon-x-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.71 7.71">
             <g>
                 <g>
@@ -363,7 +363,6 @@ align-items: center;
             </g>
         </svg>
         </a>
-    
         <div id="selectedColor">
 
         </div>
@@ -384,13 +383,10 @@ align-items: center;
           <ul class="grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max negative-margin product-grid" role="list">
             {%- for item in search.results -%}
             {% if item.object_type == 'product' %} 
-                <li class="grid__item"
-                >
-                  {%- case item.object_type -%}
-                    {%- when 'product' -%}
-                    <a href="{{ item.url | within: collection }}" class="grid__image">
+                <li class="grid__item">
                       <div class="listItemWrap" >
-                          <figure class="collectionImg">
+                        <a href="{{ item.url | within: collection }}" class="grid__image" data-info='productinfo-{{item.title | handleize | downcase}}'>
+                          <figure class="collectionImg" >
                             {% if item.metafields.custom_fields["promotion_text"] != blank %}
                                 <span class="special">{{ item.metafields.custom_fields["promotion_text"] }}</span>
                             {% elsif item.metafields.custom_fields["main_image_banner"] != blank  %}
@@ -400,29 +396,33 @@ align-items: center;
                               {% endif %}
                             <img loading="lazy" width="{{item.featured_image.width}}" height="{{item.featured_image.height}}" src="{{ item.featured_image.src | img_url: 'large' }}" alt="{{ item.featured_image.alt | escape }}">
                           </figure>
+                        </a>
                         <h2>{{ item.title }}</h2>
-                        <div id="options">
+                        <div class="options">
                           {%- for option in item.options_with_values -%}
                           {% if option.name == 'Color' %}
-                              {%- for value in option.values -%}
-                                <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                                      name="{{ option.name }}"
-                                      value="{{ value | escape }}"
-                                      form="product-form-{{ section.id }}"
-                                      {% if option.selected_value == value %}checked{% endif %}
-                                >
-                                <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                                  <span 
-                                  {% if option.name == "Color" %}
-                                   class="swatch_color_{{value | downcase}} color"
-                                   data-color="{{ value | escape}}"
-                                   {% endif %}>
-                                    {% unless option.name == "Color" %}
-                                      {{ value }}
-                                    {% endunless %}
-                                  </span>
-                                </label>
-                              {%- endfor -%}
+                            {%- for value in option.values -%}
+                            <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                                  name="{{ option.name }}"
+                                  value="{{ value | escape }}"
+                                  form="product-form-{{ section.id }}"
+                                  {% if option.selected_value == value %}checked{% endif %}
+                            >
+                            <label class="{{ option.name}}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                              <span 
+                              {% if option.name == "Color" %}
+                                {% assign file_handle = value | downcase | handleize | append: '.png' %}
+                                {% assign colour_handle = value | split: ' ' | last | downcase %}
+                              class="color"
+                              style="background-color: {{colour_handle | downcase}};
+                              background-image:url({{ file_handle | file_url }})"
+                              {% endif %}>
+                                {% unless option.name == "Color" %}
+                                  {{ value }}
+                                {% endunless %}
+                              </span>
+                            </label>
+                          {%- endfor -%}
                           {% endif %}
                           {%- endfor -%}
                           {% if item.variants.size > 1 %}
@@ -432,16 +432,29 @@ align-items: center;
                               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                           {% endif %}
                       </div>
-                        <div class="price" style="text-align:center">
-                          {% if item.price < item.compare_at_price_min %}
-                              <span class="strikeout">{{ item.compare_at_price_min | money }}</span>
+                      <select name="id" id="productSelect">
+                        {% for variant in item.variants %}
+                          {% if variant.available %}
+                            <option value="{{ variant.id }}">
+                              {{ variant.title }} - {{ variant.price | money_with_currency }}
+                            </option>
+                          {% else %}
+                            <option disabled="disabled">
+                              {{ variant.title }} - sold out
+                            </option>
                           {% endif %}
-                          {{ item.price | money }} 
-                        </div>
-
+                        {% endfor %}
+                      </select>
+                      <div class="price" style="text-align:center">
+                        {% if item.price < item.compare_at_price_min %}
+                            <span class="strikeout">{{ item.compare_at_price_min | money }}</span>
+                        {% endif %}
+                        {{ item.price | money }} 
                       </div>
-                    </a>
-                  {%- endcase -%}
+                      </div>
+                    <script type="application/json" id="productinfo-{{item.title | handleize | downcase}}">
+                      {{ item | json }}
+                    </script>
                 </li>
               {% endif %}
             {%- endfor -%}
@@ -458,13 +471,7 @@ align-items: center;
 {% endunless %}
 <script defer>
   var selectedTags = [];
-  $('#sortBy').change(function (e) { 
-    e.preventDefault();
-    const selectedSort = $("input[type='radio']:checked").val();
-    const url = window.location + '&filter.v.price.gte=&filter.v.price.lte=&sort_by=' + selectedSort;
-    renderSectionFromFetch(url);
-  });
-  
+
   function filterProducts(selectedTags) {
         var sizeOptions = [],
             colorOptions = [];
@@ -520,13 +527,65 @@ align-items: center;
     }
   }
 
- $('form.filter-form').click(function (e) {
+  $(document).ready(function () {
+   setSelectedColor();
+
+   $('form.filter-form').click(function (e) {
    if(e.target.tagName === "INPUT"){
    $(this).submit();
    }
   })
 
-  $(document).ready(function () {
-   setSelectedColor();
+   $('#sortBy').change(function (e) { 
+    e.preventDefault();
+    const selectedSort = $("input[type='radio']:checked").val();
+    const url = window.location + '&filter.v.price.gte=&filter.v.price.lte=&sort_by=' + selectedSort;
+    renderSectionFromFetch(url);
+  });
+
+  // Hover color options
+  $('.options').each((index, item)=>{
+    $(this).mouseover(function (e) {
+      mouseOver(e);
+    })
+    function mouseOver(e) {
+      e.preventDefault();
+      var productInfo = '',thisVariant, productImgNode;
+      if(e.target.nodeName === "LABEL"){
+        if(productInfo === ''){
+          var targetId = e.target.parentNode.parentNode.querySelector('a').getAttribute('data-info');
+          productImgNode = e.target.parentNode.parentNode.querySelector('img');
+          productInfo = JSON.parse(document.getElementById(targetId).text).variants;
+        }
+        thisVariant = $(e.target.control).attr('value');
+      }
+      if (productInfo !== '') {
+        var imgsrc = getTheImgSrc(productInfo, thisVariant);
+        if(imgsrc){
+        updateProductImg(productImgNode, imgsrc);
+        }
+      }
+      function getTheImgSrc(productInfo, thisVariant) {
+        var variant = productInfo.find(item=>{
+          if (item.option1 === thisVariant) {
+            return true
+          }else if(item.option2 === thisVariant){
+            return true
+          }
+        })
+        if(!variant || !variant.featured_image) {
+          return;
+        }
+
+        return variant.featured_image.src;
+      };
+      function updateProductImg(productImgNode, url) {
+        var srcset = productImgNode.getAttribute('srcset');
+        if (srcset !== url) {
+          productImgNode.setAttribute('srcset', url);
+        }
+      }
+    }
+  })
   });
 </script>

@@ -8,7 +8,6 @@
     - http://schema.org/docs/gs.html
 
 {% endcomment %}
-{{ 'swatch-colors.css' | asset_url | stylesheet_tag }}
 {{ 'product-form.css' | asset_url | stylesheet_tag }}
 
   <!-- link to magiczoomplus.css image gallery file -->
@@ -16,7 +15,6 @@
 <!-- link to magiczoomplus.js image gallery file -->
 {{ 'magiczoomplus.js' | asset_url | script_tag }}
 
-<script src="{{ 'swatch.js' | asset_url }}" defer></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -97,11 +95,14 @@
                         form="product-form-{{ section.id }}"
                         {% if option.selected_value == value %}checked{% endif %}
                   >
-                  <label class="{{ option.name }}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                  <label class="{{ option.name}}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
                     <span 
                     {% if option.name == "Color" %}
-                     class="swatch_color_{{value | downcase}} color"
-                     data-color="{{ value | escape}}"
+                      {% assign file_handle = value | downcase | handleize | append: '.png' %}
+                      {% assign colour_handle = value | split: ' ' | last | downcase %}
+                     class="color"
+                    style="background-color: {{colour_handle | downcase}};
+                              background-image:url({{ file_handle | file_url }})"
                      {% endif %}>
                       {% unless option.name == "Color" %}
                         {{ value }}
@@ -193,7 +194,7 @@
         return;
       }
       $(item).attr('selected', false);
-    })
+    });
   });
 });
 </script>
