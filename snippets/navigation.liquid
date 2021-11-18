@@ -19,6 +19,7 @@
         
     }
 </style>
+{{ 'navbar.css' | asset_url | stylesheet_tag }}
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -50,13 +51,30 @@
 								<a href="{{ link.url }}" class="site-nav__link">
 									{{ link.title }}
 								</a>
-								<ul class="site-nav__dropdown">
-                  {% for childlink in linklists[child_list_handle].links %}
-                    <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-                      <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
+								<div class="site-nav__dropdown">
+                  <ul class="container">
+                    {% for childlink in linklists[child_list_handle].links %}
+                      <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+                        <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                        {% if childlink.links != blank %}
+                        {% assign linkNumber = childlink.links | size %}
+                          <div class="sub-menu{% if linkNumber > 5 %} sub-menu-separate {% endif %}">
+                            <ul>
+                              {% for childlink_child in childlink.links %}
+                              <li>
+                                <a href="{{ childlink_child.url }}">
+                                  <span>{{ childlink_child.title }}</span>
+                                </a>
+                              </li>
+                              {% endfor %}
+                            </ul>
+                          </div>
+                            
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
 							</li>
 							<li class="pack100">   </li>
             {% else %}
@@ -103,3 +121,38 @@ font-weight: normal;" placeholder="SEARCH "
     </div>
   </div>
 </nav>
+
+<script defer>
+
+  $('.site-nav--has-dropdown').each(function () {
+    $(this).mouseenter(function (e) {
+      console.log(e.target);
+      if ($(e.target).hasClass('site-nav__link')) {
+        $(e.target).addClass('expanded');
+      }
+      });
+    $(this).mouseleave(function (e) {
+      setTimeout(() => {
+        if ($(e.target).hasClass('expanded')) {
+          $(e.target).removeClass('expanded');
+        }
+      }, 300);
+    }); 
+    })
+
+  $(window).resize(function () { 
+    dropdownClick();
+
+  });
+  dropdownClick();
+  function dropdownClick() {
+    if ($(window).innerWidth()<=768) {
+    $('.site-nav--has-dropdown .site-nav__link').each(function () {
+      $(this).click(function (e) {
+        e.preventDefault()
+        $(this).toggleClass('expanded');
+        })
+      })
+    }
+  }
+</script>
