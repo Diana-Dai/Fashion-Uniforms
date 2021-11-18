@@ -408,7 +408,7 @@ align-items: center;
                                   form="product-form-{{ section.id }}"
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label class="{{ option.name}}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                            <label data-label={{ value | escape }} class="{{ option.name}}-label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
                               <span 
                               {% if option.name == "Color" %}
                                 {% assign file_handle = value | downcase | handleize | append: '.png' %}
@@ -544,7 +544,10 @@ align-items: center;
   });
 
   // Hover color options
-  $('.options').each((index, item)=>{
+  $('.options').each(function(){
+    $(this).click(function (e) {
+      e.preventDefault();
+      })
     $(this).mouseover(function (e) {
       mouseOver(e);
     })
@@ -557,12 +560,15 @@ align-items: center;
           productImgNode = e.target.parentNode.parentNode.querySelector('img');
           productInfo = JSON.parse(document.getElementById(targetId).text).variants;
         }
-        thisVariant = $(e.target.control).attr('value');
+        thisVariant = $(e.target).attr('data-label');
+        console.log(thisVariant);
       }
       if (productInfo !== '') {
         var imgsrc = getTheImgSrc(productInfo, thisVariant);
         if(imgsrc){
         updateProductImg(productImgNode, imgsrc);
+        }else{
+          updateProductImg(productImgNode, '')
         }
       }
       function getTheImgSrc(productInfo, thisVariant) {
@@ -576,7 +582,6 @@ align-items: center;
         if(!variant || !variant.featured_image) {
           return;
         }
-
         return variant.featured_image.src;
       };
       function updateProductImg(productImgNode, url) {
