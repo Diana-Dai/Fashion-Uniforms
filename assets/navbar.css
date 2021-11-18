@@ -89,7 +89,8 @@
   .site-nav__link.expanded{
     font-weight: bold !important;
   }
-  .site-nav__dropdown li{
+  .site-nav__dropdown li,
+  .site-nav__dropdown .sub-menu li{
     padding-left: 10px;
   }
 
