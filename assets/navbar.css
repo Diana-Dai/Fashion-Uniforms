@@ -89,5 +89,8 @@
   .site-nav__link.expanded{
     font-weight: bold !important;
   }
+  .site-nav__dropdown li{
+    padding-left: 10px;
+  }
 
 }
