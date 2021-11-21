@@ -84,26 +84,23 @@ $(document).ready(function () {
 });
 
 // Hover color options
-$('.options').each(function(){
-  $(this).click(function (e) {
-    e.preventDefault();
-    })
-  $(this).mouseover(function (e) {
-    triggermouseOver(e);
+
+$('#ProductGridContainer').mouseover(function (e) {
+  if($(e.target).hasClass('Color-label')){
+    triggermouseOver(e)
+  }
   })
+
   var triggermouseOver = throttle(mouseOver, 100);
   function mouseOver(e) {
     e.preventDefault();
     var productInfo = '',thisVariant, productImgNode;
-    if(e.target.nodeName === "LABEL"){
-      if(productInfo === ''){
-        var targetId = e.target.parentNode.parentNode.querySelector('a').getAttribute('data-info');
-        productImgNode = e.target.parentNode.parentNode.querySelector('img');
-        productInfo = JSON.parse(document.getElementById(targetId).text).variants;
-      }
-      thisVariant = $(e.target).attr('data-label');
-      // console.log(thisVariant);
+    if(productInfo === ''){
+      var targetId = e.target.parentNode.parentNode.querySelector('a').getAttribute('data-info');
+      productImgNode = e.target.parentNode.parentNode.querySelector('img');
+      productInfo = JSON.parse(document.getElementById(targetId).text).variants;
     }
+    thisVariant = $(e.target).attr('data-label');
     if (productInfo !== '') {
       var imgsrc = getTheImgSrc(productInfo, thisVariant);
       if(imgsrc){
@@ -112,6 +109,8 @@ $('.options').each(function(){
         updateProductImg(productImgNode, '')
       }
     }
+      // console.log(thisVariant);
+
     function getTheImgSrc(productInfo, thisVariant) {
       var variant = productInfo.find(item=>{
         if (item.option1 === thisVariant) {
@@ -132,5 +131,5 @@ $('.options').each(function(){
       }
     }
   }
-})
+
 });
