@@ -126,11 +126,11 @@
             <select name="id" id="productSelect">
               {% for variant in product.variants %}
                 {% if variant.available %}
-                  <option value="{{ variant.id }}">
+                  <option value="{{ variant.id }}" data-sku="{{ variant.sku }}" data-option1 ="{{variant.option1}}" data-option2="{{variant.option2}}">
                     {{ variant.title }} - {{ variant.price | money_with_currency }}
                   </option>
                 {% else %}
-                  <option disabled="disabled">
+                  <option disabled="disabled" data-sku="{{ variant.sku }}" data-option1 ="{{variant.option1}}" data-option2="{{variant.option2}}">
                     {{ variant.title }} - sold out
                   </option>
                 {% endif %}
@@ -182,8 +182,11 @@
     }else{
       var op2 = '';
     }
+    
     $('#productSelect option').each(function (index, item) {
-      if (item.label.indexOf(op1)>-1 && item.label.indexOf(op2)>-1) {
+      // Find the choosen variant
+      if (item.getAttribute('data-option1') === op1 && item.getAttribute('data-option2') === op2 ||
+       item.getAttribute('data-option1') === op2 && item.getAttribute('data-option2') === op1) {
         $(item).prop("selected",true);
         if ($(item).attr('disabled')) {
             $("#addtocart").attr('disabled','disabled');
@@ -192,6 +195,12 @@
           $("#addtocart").attr('disabled',false);
             $("#addtocart").text('Add To Cart');
         }
+        // Update SKU
+        if(item.getAttribute('data-sku')){
+          $('.variant-sku').text(item.getAttribute('data-sku'));
+        }
+
+        // Update Id
         $('#shopifyId').val(item.value);
         return;
       }
