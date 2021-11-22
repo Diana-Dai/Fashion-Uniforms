@@ -63,6 +63,8 @@
         </aside>
         <div class="detailContentWrap">
           <h1>{{ product.title }}</h1>
+          {% assign current_variant = product.selected_or_first_available_variant %}
+          <span class="variant-sku">{{ current_variant.sku }}</span>
           <div class="detailWords">
             {{ product.description }}
             <br/>
